@@ -1,0 +1,1995 @@
+<!DOCTYPE html>
+
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinderanästhesie – Komplikationen komplett</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #f0f4f8;
+            --surface: #ffffff;
+            --surface2: #f5f8fc;
+            --surface3: #e8eef5;
+            --border: rgba(0,0,0,0.07);
+            --border-active: rgba(14,105,161,0.3);
+            --accent: #0e69a1;
+            --accent2: #0284c7;
+            --accent-glow: rgba(14,105,161,0.1);
+            --green: #0d6b3e;
+            --green-dim: rgba(13,107,62,0.09);
+            --amber: #92610a;
+            --red: #b91c1c;
+            --red-dim: rgba(185,28,28,0.08);
+            --text: #0f172a;
+            --text-muted: #4b6a8a;
+            --text-dim: #8faabf;
+            --mono: 'DM Mono', monospace;
+            --display: 'Syne', sans-serif;
+            --body: 'Inter', sans-serif;
+        }
+
+```
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+        background: var(--bg);
+        color: var(--text);
+        font-family: var(--body);
+        min-height: 100vh;
+        padding: 24px 16px 60px;
+        background-image:
+            radial-gradient(ellipse 80% 50% at 50% -10%, rgba(14,105,161,0.06) 0%, transparent 60%),
+            radial-gradient(ellipse 40% 30% at 90% 90%, rgba(14,105,161,0.04) 0%, transparent 50%);
+    }
+
+    .shell {
+        max-width: 1300px;
+        margin: 0 auto;
+    }
+
+    header {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        margin-bottom: 32px;
+        padding: 0 4px;
+        animation: fadeDown 0.5s ease both;
+    }
+    .header-icon {
+        width: 52px; height: 52px;
+        background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+        border-radius: 14px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 24px;
+        box-shadow: 0 0 24px rgba(14,105,161,0.2);
+        flex-shrink: 0;
+    }
+    header h1 {
+        font-family: var(--display);
+        font-size: 1.6rem;
+        font-weight: 800;
+        letter-spacing: -0.02em;
+        color: var(--text);
+        line-height: 1.1;
+    }
+    header p {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        font-weight: 300;
+        margin-top: 3px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    .input-panel {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 24px 28px;
+        margin-bottom: 24px;
+        animation: fadeDown 0.5s 0.1s ease both;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+    .input-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px 32px;
+        align-items: flex-end;
+        margin-bottom: 20px;
+    }
+    .input-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+    }
+    .input-group label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+    .input-row-inner {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .input-row-inner span {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+    input[type=number] {
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        color: var(--text);
+        font-family: var(--mono);
+        font-size: 1.1rem;
+        font-weight: 500;
+        padding: 10px 14px;
+        width: 80px;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        -moz-appearance: textfield;
+    }
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+    input[type=number]:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    input[type=number].wide { width: 110px; }
+
+    .slider-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding-top: 4px;
+    }
+    .slider-label {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        white-space: nowrap;
+    }
+    input[type=range] {
+        flex: 1;
+        -webkit-appearance: none;
+        height: 4px;
+        border-radius: 4px;
+        background: var(--surface3);
+        outline: none;
+        cursor: pointer;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: 20px; height: 20px;
+        border-radius: 50%;
+        background: var(--accent);
+        border: 3px solid var(--bg);
+        box-shadow: 0 0 10px rgba(14,105,161,0.35);
+        cursor: pointer;
+        transition: transform 0.15s, box-shadow 0.15s;
+    }
+    input[type=range]::-webkit-slider-thumb:hover {
+        transform: scale(1.2);
+        box-shadow: 0 0 16px rgba(14,105,161,0.55);
+    }
+    .slider-badge {
+        background: var(--accent);
+        color: #fff;
+        font-family: var(--mono);
+        font-size: 0.9rem;
+        font-weight: 500;
+        padding: 5px 14px;
+        border-radius: 8px;
+        min-width: 70px;
+        text-align: center;
+    }
+
+    .warning-badge {
+        background: var(--red-dim);
+        color: var(--red);
+        border: 1px solid rgba(248,113,113,0.3);
+        padding: 7px 14px;
+        border-radius: 8px;
+        font-size: 0.78rem;
+        font-weight: 600;
+        letter-spacing: 0.03em;
+        display: none;
+    }
+    .warning-badge.visible { display: inline-flex; align-items: center; gap: 6px; }
+
+    .tab-bar {
+        display: flex;
+        gap: 4px;
+        margin-bottom: 20px;
+        background: var(--surface);
+        padding: 6px;
+        border-radius: 14px;
+        border: 1px solid var(--border);
+        flex-wrap: wrap;
+        animation: fadeDown 0.5s 0.2s ease both;
+    }
+    .tab-button {
+        background: transparent;
+        border: none;
+        color: var(--text-muted);
+        font-family: var(--body);
+        font-size: 0.8rem;
+        font-weight: 600;
+        padding: 9px 16px;
+        border-radius: 9px;
+        cursor: pointer;
+        transition: background 0.2s, color 0.2s;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+    }
+    .tab-button:hover {
+        color: var(--text);
+        background: var(--surface2);
+    }
+    .tab-button.active {
+        background: var(--accent);
+        color: #fff;
+        box-shadow: 0 2px 10px rgba(14,105,161,0.2);
+    }
+
+    .tab-content {
+        display: none;
+        animation: fadeIn 0.3s ease both;
+    }
+    .tab-content.active { display: block; }
+
+    .tab-header {
+        font-family: var(--display);
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 18px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    .tab-header::before {
+        content: '';
+        display: block;
+        width: 3px; height: 18px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
+
+    .data-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 8px;
+    }
+    .data-row {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 12px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        transition: border-color 0.2s;
+    }
+    .data-row:hover { border-color: var(--border-active); }
+    .data-row .label {
+        font-size: 0.82rem;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+    .data-row .value {
+        font-family: var(--mono);
+        font-size: 0.95rem;
+        font-weight: 500;
+        color: var(--accent);
+        background: var(--accent-glow);
+        padding: 3px 12px;
+        border-radius: 6px;
+        white-space: nowrap;
+    }
+
+    .table-wrap {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-bottom: 24px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .med-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.83rem;
+    }
+    .med-table thead tr {
+        background: var(--surface2);
+        border-bottom: 1px solid var(--border);
+    }
+    .med-table th {
+        text-align: left;
+        padding: 12px 16px;
+        font-size: 0.68rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+    }
+    .med-table td {
+        padding: 11px 16px;
+        border-bottom: 1px solid var(--border);
+        vertical-align: top;
+        color: var(--text);
+        line-height: 1.45;
+    }
+    .med-table tbody tr:last-child td { border-bottom: none; }
+    .med-table tbody tr:hover td { background: rgba(255,255,255,0.015); }
+    .med-notes {
+        font-size: 0.72rem;
+        color: var(--text-dim);
+        display: block;
+        margin-top: 2px;
+    }
+    .dosis-cell {
+        font-family: var(--mono);
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--green);
+        background: var(--green-dim);
+        padding: 4px 10px;
+        border-radius: 6px;
+        white-space: nowrap;
+        display: inline-block;
+    }
+
+    .chip {
+        display: inline-block;
+        font-size: 0.7rem;
+        font-weight: 600;
+        padding: 2px 8px;
+        border-radius: 5px;
+        letter-spacing: 0.04em;
+        background: var(--surface3);
+        color: var(--text-muted);
+    }
+
+    .dosierung-badge {
+        font-family: var(--mono);
+        font-size: 0.75rem;
+        color: var(--accent);
+        background: var(--accent-glow);
+        padding: 2px 8px;
+        border-radius: 4px;
+        margin-left: 8px;
+        white-space: nowrap;
+    }
+
+    /* Akkordeon für Komplikationen */
+    .complication-list {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .complication-item {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+        transition: border-color 0.2s;
+    }
+    .complication-item:hover {
+        border-color: var(--border-active);
+    }
+    .complication-header {
+        background: var(--surface2);
+        padding: 14px 18px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        font-weight: 600;
+        color: var(--text);
+        transition: background 0.2s;
+    }
+    .complication-header:hover {
+        background: var(--surface3);
+    }
+    .complication-header .arrow {
+        display: inline-block;
+        transition: transform 0.2s;
+        font-style: normal;
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+    .complication-header.open .arrow {
+        transform: rotate(90deg);
+    }
+    .complication-content {
+        display: none;
+        padding: 18px 22px;
+        background: var(--surface);
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+    .complication-content.visible {
+        display: block;
+    }
+
+    /* Spezielles Styling für Komplikations-Inhalte */
+    .complication-section {
+        margin-bottom: 16px;
+    }
+    .complication-section-title {
+        font-family: var(--display);
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: var(--text);
+        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .complication-section-title::before {
+        content: '';
+        display: inline-block;
+        width: 3px; height: 14px;
+        background: var(--accent);
+        border-radius: 2px;
+    }
+    .complication-list-bullet {
+        list-style-type: none;
+        padding-left: 0;
+    }
+    .complication-list-bullet li {
+        margin-bottom: 6px;
+        padding-left: 20px;
+        position: relative;
+    }
+    .complication-list-bullet li::before {
+        content: '•';
+        color: var(--accent);
+        font-weight: bold;
+        position: absolute;
+        left: 6px;
+    }
+    .complication-dose {
+        font-family: var(--mono);
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--green);
+        background: var(--green-dim);
+        padding: 2px 8px;
+        border-radius: 6px;
+        white-space: nowrap;
+        display: inline-block;
+        margin: 0 4px;
+    }
+    .complication-note {
+        background: var(--surface2);
+        border-left: 3px solid var(--amber);
+        padding: 10px 14px;
+        border-radius: 0 8px 8px 0;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        margin: 12px 0;
+    }
+    .complication-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 10px;
+        margin: 8px 0;
+    }
+    .complication-grid-item {
+        background: var(--surface2);
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-size: 0.85rem;
+    }
+
+    @keyframes fadeDown {
+        from { opacity: 0; transform: translateY(-12px); }
+        to   { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+
+    @media (max-width: 680px) {
+        body { padding: 12px 10px 80px; }
+        header { gap: 12px; margin-bottom: 20px; }
+        header h1 { font-size: 1.1rem; }
+        header p { font-size: 0.75rem; }
+        .input-panel { padding: 16px 14px; }
+        .input-grid { gap: 12px 16px; }
+        .tab-bar { padding: 5px; gap: 3px; }
+        .tab-button { font-size: 0.72rem; padding: 6px 9px; }
+        .tab-header { font-size: 0.95rem; }
+
+        /* Tables: make scrollable horizontally */
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .med-table { font-size: 0.74rem; min-width: 480px; }
+        .med-table th, .med-table td { padding: 8px 10px; }
+        .dosis-cell { font-size: 0.78rem; white-space: normal; }
+
+        /* Data rows: stack label and value */
+        .data-grid { grid-template-columns: 1fr; gap: 6px; }
+        .data-row { flex-direction: row; flex-wrap: wrap; }
+        .data-row .label { font-size: 0.78rem; flex: 1 1 55%; }
+        .data-row .value { font-size: 0.85rem; flex: 0 0 auto; max-width: 100%; white-space: normal; }
+
+        /* Complications */
+        .complication-header { padding: 11px 12px; font-size: 0.85rem; }
+        .complication-content { padding: 12px 12px; }
+        .complication-section-title { font-size: 0.72rem; }
+        .complication-list-bullet li { font-size: 0.8rem; }
+        .complication-dose { font-size: 0.78rem; white-space: normal; word-break: break-word; }
+        .complication-note { font-size: 0.75rem; }
+
+        /* Prevent any overflow */
+        .shell, .tab-content, .input-panel { max-width: 100%; overflow-x: hidden; }
+        .dosis-cell, .dosierung-badge, .chip { white-space: normal; word-break: break-word; }
+    }
+
+    /* iPhone landscape */
+    @media (max-width: 900px) and (orientation: landscape) {
+        body { padding: 10px 16px 40px; }
+        .tab-bar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+        .tab-button { flex-shrink: 0; font-size: 0.75rem; padding: 7px 12px; }
+        .data-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+        .med-table { font-size: 0.78rem; }
+    }
+</style>
+```
+
+</head>
+<body>
+<div class="shell">
+
+```
+<header>
+    <div class="header-icon">🩺</div>
+    <div>
+        <h1>Pädiatrie · Anästhesie</h1>
+        <p>Kinderanästhesie – Dosierhilfe</p>
+    </div>
+</header>
+
+<div class="input-panel">
+    <div class="input-grid">
+        <div class="input-group">
+            <label>Alter</label>
+            <div class="input-row-inner">
+                <input type="number" id="ageYears" min="0" max="20" value="2" step="1">
+                <span>Jahre</span>
+                <input type="number" id="ageMonths" min="0" max="11" value="0" step="1">
+                <span>Monate</span>
+            </div>
+        </div>
+        <div class="input-group">
+            <label>Gewicht</label>
+            <div class="input-row-inner">
+                <input type="number" class="wide" id="weightInput" step="0.1" min="0.5" max="70" value="12">
+                <span>kg</span>
+            </div>
+        </div>
+        <div id="warningBadge" class="warning-badge"></div>
+    </div>
+    <div class="slider-row">
+        <span class="slider-label">Schnellwahl Gewicht</span>
+        <input type="range" id="weightSlider" min="0.5" max="70" step="0.1" value="12">
+        <span id="sliderValue" class="slider-badge">12,0</span>
+    </div>
+</div>
+
+<!-- Tab Bar (10 Tabs) -->
+<div class="tab-bar">
+    <button class="tab-button active" data-tab="vitals">❤️ Vitalparameter</button>
+    <button class="tab-button" data-tab="airway">🔧 Airway</button>
+    <button class="tab-button" data-tab="hypno">💉 Hypnotika</button>
+    <button class="tab-button" data-tab="relax">💪 Relaxanzien</button>
+    <button class="tab-button" data-tab="analg">💊 Analgetika</button>
+    <button class="tab-button" data-tab="anti">🦠 Antibiotika</button>
+    <button class="tab-button" data-tab="ponv">🤢 PONV</button>
+    <button class="tab-button" data-tab="emergency">🚨 Notfall</button>
+    <button class="tab-button" data-tab="premed">📋 Prämedikation</button>
+    <button class="tab-button" data-tab="complications">⚠️ Komplikationen</button>
+</div>
+
+<!-- Vitals Tab -->
+<div id="vitalsTab" class="tab-content active">
+    <div class="tab-header">Vitalparameter · Richtwerte</div>
+    <div class="data-grid" id="vitalsData"></div>
+</div>
+
+<!-- Airway Tab -->
+<div id="airwayTab" class="tab-content">
+    <div class="tab-header">Airway &amp; Equipment</div>
+    <div class="data-grid" id="airwayData"></div>
+</div>
+
+<!-- Hypno Tab -->
+<div id="hypnoTab" class="tab-content">
+    <div class="tab-header">Hypnotika &amp; Benzodiazepinantagonist</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
+            <tbody id="hypnoBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Relax Tab -->
+<div id="relaxTab" class="tab-content">
+    <div class="tab-header">Muskelrelaxantien &amp; Antagonisten</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
+            <tbody id="relaxBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Analg Tab -->
+<div id="analgTab" class="tab-content">
+    <div class="tab-header">Opioidanalgetika & Adjuvanzien</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
+            <tbody id="opioidBody"></tbody>
+        </table>
+    </div>
+
+    <div class="tab-header" style="margin-top:25px;">Basisanalgetika</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead>
+                <tr>
+                    <th>Wirkstoff</th>
+                    <th>Applikation</th>
+                    <th>Indikation</th>
+                    <th>Berechnete Dosis</th>
+                    <th>Max. Tagesdosis</th>
+                </tr>
+            </thead>
+            <tbody id="basisAnalgBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Antibiotika Tab -->
+<div id="antiTab" class="tab-content">
+    <div class="tab-header">Antibiotika</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead>
+                <tr>
+                    <th>Antibiotikum</th>
+                    <th>Dosierung / Hinweise</th>
+                    <th>Berechnete Dosis</th>
+                    <th>Volumen (ca.)</th>
+                </tr>
+            </thead>
+            <tbody id="antiBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- PONV Tab (mit Dexamethason an erster Stelle) -->
+<div id="ponvTab" class="tab-content">
+    <div class="tab-header">PONV Prophylaxe & Therapie</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead>
+                <tr>
+                    <th>Medikament</th>
+                    <th>Applikation / Hinweise</th>
+                    <th>Dosierung</th>
+                    <th>Berechnete Dosis</th>
+                </tr>
+            </thead>
+            <tbody id="ponvBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Emergency Tab -->
+<div id="emergencyTab" class="tab-content">
+    <div class="tab-header">Notfallmedikamente</div>
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead>
+                <tr>
+                    <th>Medikament</th>
+                    <th>Applikation / Verdünnung</th>
+                    <th>Dosierung</th>
+                    <th>Berechnete Dosis</th>
+                </tr>
+            </thead>
+            <tbody id="emergencyBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Premed Tab -->
+<div id="premedTab" class="tab-content">
+    <div class="tab-header">Prämedikation</div>
+
+    <button class="info-toggle" id="toggleInfoIcon">
+        <i class="arrow">▶</i> Generelle Anmerkungen
+    </button>
+    <div id="hiddenInfoBox" class="info-box" style="display:none; background: rgba(251,191,36,0.05); border: 1px solid rgba(251,191,36,0.15); border-radius: 14px; padding: 20px 24px; margin-bottom: 24px;">
+        <strong>Keine Prämedikation erhalten</strong>
+        <ul style="padding-left:16px; color:var(--text-muted);">
+            <li>Säuglinge unter 6 Monaten</li>
+            <li>Cerebral schwerstbehinderte Patienten</li>
+            <li>Kritisch kranke / kardiorespiratorisch instabile Patienten</li>
+            <li>Patienten mit schwersten Atemwegsobstruktionen</li>
+            <li>Patienten vom Notfall nach Fentanylgabe nasal oder Nalbuphingabe i.v.</li>
+        </ul>
+        <strong>Keine rektale Applikation bei</strong>
+        <ul style="padding-left:16px; color:var(--text-muted);">
+            <li>Thrombopenie / Leukopenie · Chemotherapie</li>
+            <li>Rektumoperationen · Affektionen des Dickdarms · Koloskopie</li>
+        </ul>
+        <strong>Obligate SpO₂-Überwachung bei</strong>
+        <ul style="padding-left:16px; color:var(--text-muted);">
+            <li>OSAS · Ketamin-Prämedikation</li>
+            <li>Sehr hoher Midazolamdosis (0.7–1.0 mg/kg)</li>
+            <li>Midazolamgabe trotz Fentanyl nasal oder Nalbuphingabe auf Notfall</li>
+            <li>Anatomischen Atemwegsmissbildungen</li>
+            <li>Cerebralparese / Vigilanzreduktion bei neurologischen Grunderkrankungen</li>
+        </ul>
+        <div style="margin-top:14px; padding:10px 14px; background: rgba(251,191,36,0.08); border-left:3px solid var(--amber); border-radius:0 8px 8px 0; color:var(--text);">→ Sättigungsmonitoring, O₂-Gabe und Info an Saaloberarzt bei SpO₂ &lt; 94 % bei Prämedikation für Station verordnen!</div>
+    </div>
+
+    <div class="table-wrap">
+        <table class="med-table">
+            <thead>
+                <tr>
+                    <th>Medikament</th>
+                    <th>Applikation</th>
+                    <th>Berechnete Dosis</th>
+                    <th>Zeitpunkt</th>
+                    <th>Anmerkungen</th>
+                </tr>
+            </thead>
+            <tbody id="premedBody"></tbody>
+        </table>
+    </div>
+</div>
+
+<!-- Complications Tab -->
+<div id="complicationsTab" class="tab-content">
+    <div class="tab-header">⚠️ Komplikationen</div>
+    <div class="complication-list" id="complicationList"></div>
+</div>
+```
+
+</div>
+
+<script>
+(function() {
+    // ---------- Medikamentendatenbank (VOLLSTÄNDIG) ----------
+    const medications = [
+        // Hypnotika
+        { name: 'Propofol', cat: 'hypno', doseMin: 3, doseMax: 5, unit: 'mg', dosierung: '3–5 mg/kg', notes: 'Induktion; 10 mg/ml + Lidocain' },
+        { name: 'Etomidat', cat: 'hypno', doseMin: 0.2, doseMax: 0.3, unit: 'mg', dosierung: '0,2–0,3 mg/kg', notes: 'Induktion; 2 mg/ml' },
+        { name: 'Thiopental', cat: 'hypno', doseMgKg: 4.0, unit: 'mg', dosierung: '4 mg/kg', notes: '>10 kg: 25 mg/ml; <10 kg: 5 mg/ml' },
+        { name: 'Ketamin', cat: 'hypno', doseMin: 1, doseMax: 2, unit: 'mg', dosierung: '1–2 mg/kg', notes: 'i.v. 1-2 mg/kg; versch. Konz.' },
+        { name: 'Midazolam', cat: 'hypno', doseMgKg: 0.1, unit: 'mg', dosierung: '0,1 mg/kg', notes: 'i.v. 0.1 mg/kg; 1 mg/ml' },
+        { name: 'Flumazenil', cat: 'hypno', doseMin: 0.01, doseMax: 0.01, unit: 'mg', maxMg: 0.2, dosierung: '0,01 mg/kg (max 0,2 mg)', notes: 'Antagonist, max 0.2 mg; 100 mcg/ml' },
+        
+        // Muskelrelaxantien
+        { name: 'Atracurium', cat: 'relax', doseMin: 0.5, doseMax: 1.0, unit: 'mg', dosierung: '0,5–1,0 mg/kg', notes: 'RSI; 10 mg/ml' },
+        { name: 'Mivacurium', cat: 'relax', doseMin: 0.2, doseMax: 0.4, unit: 'mg', dosierung: '0,2–0,4 mg/kg', notes: 'RSI 0.4 mg/kg; 2 mg/ml' },
+        { name: 'Suxamethonium', cat: 'relax', special: 'sux', dosierung: 'altersabhängig', notes: 'Altersabhängig; vorher Atropin 0.02 mg/kg; 20 mg/ml' },
+        { name: 'Pancuronium', cat: 'relax', doseMgKg: 0.1, unit: 'mg', dosierung: '0,1 mg/kg', notes: '2 mg/ml → 1 mg/ml verdünnen' },
+        { name: 'Rocuronium', cat: 'relax', doseMin: 0.6, doseMax: 1.0, unit: 'mg', dosierung: '0,6–1,0 mg/kg', notes: 'RSI; 10 mg/ml' },
+        { name: 'Vecuronium', cat: 'relax', doseMin: 0.1, doseMax: 0.2, unit: 'mg', dosierung: '0,1–0,2 mg/kg', notes: '10 mg Trockensubstanz → 1 mg/ml' },
+        { name: 'Glyco/Neostigmin', cat: 'relax', doseMlKg: 0.02, unit: 'ml', minMl: 0.1, dosierung: '0,02 ml/kg', notes: 'Kombipräparat; mind. 0.1 ml' },
+        { name: 'Sugammadex', cat: 'relax', doseMin: 2, doseMax: 4, unit: 'mg', dosierung: '2–4 mg/kg', notes: 'TOF 2: 2 mg/kg; PTC 1-2: 4 mg/kg; RSI: 16 mg/kg; 100 mg/ml' },
+        
+        // Opioide & Adjuvanzien
+        { name: 'Alfentanil', cat: 'opioid', doseMinMcg: 10, doseMaxMcg: 30, unit: 'µg', dosierung: '10–30 µg/kg', notes: 'i.v. 10-30 µg/kg; 500 µg/ml' },
+        { name: 'Fentanyl', cat: 'opioid', doseMinMcg: 1, doseMaxMcg: 3, unit: 'µg', dosierung: '1–3 µg/kg', notes: '1-3 µg/kg; 50 µg/ml' },
+        { name: 'Morphin', cat: 'opioid', doseMin: 0.05, doseMax: 0.1, unit: 'mg', dosierung: '0,05–0,1 mg/kg', notes: 'i.v.; 10 mg/ml → 1 mg/ml' },
+        { name: 'Remifentanil', cat: 'opioid', doseMinMcgMin: 0.05, doseMaxMcgMin: 0.3, unit: 'µg/kg/min', dosierung: '0,05–0,3 µg/kg/min', notes: 'Perfusor; 1 mg TS + 50 ml = 20 µg/ml' },
+        { name: 'Nalbuphin', cat: 'opioid', doseMin: 0.1, doseMax: 0.2, unit: 'mg', dosierung: '0,1–0,2 mg/kg', notes: 'i.v.; 10 mg/ml → 1 mg/ml' },
+        { name: 'Naloxon', cat: 'opioid', doseMcgKg: 10, unit: 'µg', dosierung: '10 µg/kg', notes: 'Titrieren; 0.4 mg/ml → 0.04 mg/ml bei NG' },
+        { name: 'Tramadol', cat: 'opioid', doseMin: 1, doseMax: 2, unit: 'mg', dosierung: '1–2 mg/kg', notes: '4-6-stündlich, max 8 mg/kg/Tag' },
+        { name: 'Clonidin', cat: 'opioid', doseMinMcg: 1, doseMaxMcg: 2, unit: 'µg', dosierung: '1–2 µg/kg', notes: '6-8-stündlich' },
+        
+        // Antibiotika
+        { name: 'Amoxicillin', cat: 'anti', doseMin: 50, doseMax: 50, unit: 'mg', maxMg: 2000, 
+          hinweis: '50 mg/kg, max 2000 mg/Dosis', konz: 50 },
+        { name: 'Amoxicillin/Clavulansäure', cat: 'anti', doseMin: 25, doseMax: 25, unit: 'mg', maxMg: 1100, 
+          hinweis: '25+2.5 mg/kg, max 1100 mg; Keine 1.2g-Flaschen!', konz: 50 },
+        { name: 'Cefazolin', cat: 'anti', doseMin: 25, doseMax: 25, unit: 'mg', maxMg: 1000, 
+          hinweis: '25 mg/kg, max 1000 mg/Dosis', konz: 100 },
+        { name: 'Clindamycin', cat: 'anti', doseMin: 20, doseMax: 20, unit: 'mg', maxMg: 600, 
+          hinweis: '20 mg/kg, max 600 mg/Dosis', konz: 150 },
+        { name: 'Cotrimoxol Bactrim', cat: 'anti', doseMin: 18, doseMax: 18, unit: 'mg', maxMg: 960, 
+          hinweis: '18 mg/kg, max 960 mg; Unverträglich mit Ringer+Glu 2%', konz: 48 },
+        { name: 'Vancomycin', cat: 'anti', doseMin: 15, doseMax: 15, unit: 'mg', maxMg: 2000, 
+          hinweis: '15 mg/kg, max 2000 mg', konz: 50 },
+        { name: 'Cefuroxim Zinacef', cat: 'anti', doseMin: 50, doseMax: 50, unit: 'mg', maxMg: 1500, 
+          hinweis: '50 mg/kg, max 1.5g; Pulver+100ml NaCl = 15 mg/ml', konz: 15 },
+    ];
+
+    // Basisanalgetika
+    const basisAnalgetika = [
+        { name: 'Paracetamol i.v.', app: 'i.v.', indikation: 'FG 28.–32. SSW', doseMin: 10, doseMax: 10, unit: 'mg', maxTagesDosis: '20 mg/kg/die', bedingung: () => false },
+        { name: 'Paracetamol i.v.', app: 'i.v.', indikation: 'FG 33.–36. SSW, TG <10 d', doseMin: 10, doseMax: 10, unit: 'mg', maxTagesDosis: '40 mg/kg/die', bedingung: (d) => d < 10 },
+        { name: 'Paracetamol i.v.', app: 'i.v.', indikation: '<12 Monate', doseMin: 10, doseMax: 10, unit: 'mg', maxTagesDosis: '40 mg/kg/die', bedingung: (d, w) => d < 365 },
+        { name: 'Paracetamol i.v.', app: 'i.v.', indikation: '≥12 Monate, <50 kg', doseMin: 15, doseMax: 15, unit: 'mg', maxTagesDosis: '60 mg/kg/die (max 1 g/Dosis)', bedingung: (d, w) => d >= 365 && w < 50 },
+        { name: 'Paracetamol i.v.', app: 'i.v.', indikation: '≥50 kg', doseMin: 1000, doseMax: 1000, unit: 'mg (Einzeldosis)', maxTagesDosis: '4 g/die', bedingung: (d, w) => w >= 50 },
+        { name: 'Paracetamol p.o.', app: 'p.o.', indikation: 'TG ≥10 d, ≤40 kg', doseMin: 25, doseMax: 25, unit: 'mg', maxTagesDosis: '100 mg/kg/die', bedingung: (d, w) => d >= 10 && w <= 40 },
+        { name: 'Paracetamol p.o.', app: 'p.o.', indikation: '>40 kg', doseMin: 1000, doseMax: 1000, unit: 'mg (Einzeldosis)', maxTagesDosis: '4 g/die', bedingung: (d, w) => w > 40 },
+        { name: 'Paracetamol rektal', app: 'rektal', indikation: 'TG ≥10 d, ≤40 kg', doseMin: 25, doseMax: 25, unit: 'mg', maxTagesDosis: '100 mg/kg/die', bedingung: (d, w) => d >= 10 && w <= 40 },
+        { name: 'Paracetamol rektal', app: 'rektal', indikation: '≥40 kg', doseMin: 1000, doseMax: 1000, unit: 'mg (Einzeldosis)', maxTagesDosis: '4 g/die', bedingung: (d, w) => w >= 40 },
+        { name: 'Ibuprofen', app: 'rektal/p.o.', indikation: '≥3 Mt. (3x tgl)', doseMin: 7, doseMax: 10, unit: 'mg', maxTagesDosis: '30 mg/kg/die', bedingung: (d, w) => d >= 90 && w >= 6 && w <= 50 },
+        { name: 'Ibuprofen', app: 'rektal/p.o.', indikation: '≥3 Mt. (4x tgl)', doseMin: 5, doseMax: 7, unit: 'mg', maxTagesDosis: '30 mg/kg/die', bedingung: (d, w) => d >= 90 && w >= 6 && w <= 50 },
+        { name: 'Ibuprofen', app: 'p.o.', indikation: '>50 kg', doseMin: 400, doseMax: 600, unit: 'mg (Einzeldosis)', maxTagesDosis: '2400 mg/die', bedingung: (d, w) => w > 50 },
+        { name: 'Metamizol', app: 'i.v.', indikation: '≥3 Mt.', doseMin: 8, doseMax: 16, unit: 'mg', maxTagesDosis: '65 mg/kg/die', bedingung: (d, w) => d >= 90 && w >= 6 && w < 50 },
+        { name: 'Metamizol', app: 'i.v.', indikation: '≥50 kg', doseMin: 500, doseMax: 1000, unit: 'mg (Einzeldosis)', maxTagesDosis: '4 g/die', bedingung: (d, w) => w >= 50 },
+        { name: 'Metamizol', app: 'p.o.', indikation: '≥3 Mt.', doseMin: 8, doseMax: 16, unit: 'mg', maxTagesDosis: '65 mg/kg/die', bedingung: (d, w) => d >= 90 && w >= 6 && w < 50 },
+        { name: 'Metamizol', app: 'p.o.', indikation: '≥50 kg', doseMin: 500, doseMax: 1000, unit: 'mg (Einzeldosis)', maxTagesDosis: '4 g/die', bedingung: (d, w) => w >= 50 },
+        { name: 'Ketorolac', app: 'i.v.', indikation: 'Kinder', doseMin: 0.2, doseMax: 0.4, unit: 'mg', maxMg: 20, maxTagesDosis: 'max 20 mg/Dosis, 6-stündlich', bedingung: (d, w) => true },
+    ];
+
+    // PONV-Medikamente – Dexamethason jetzt an erster Stelle
+    const ponvMeds = [
+        { name: 'Dexamethason', hinweise: '4 mg/ml → 0,4 mg/ml verdünnt; KEIN bei Leukämie/Lymphom, KMT, repetitiven Anästhesien, Diabetes abwägen', 
+          doseMin: 0.2, doseMax: 0.2, unit: 'mg', maxMg: 8 },
+        { name: 'Ondansetron', hinweise: '2 mg/ml; langsam i.v., max 3x/d, Säuglinge <4 Mo 1x/d', 
+          doseMin: 0.1, doseMax: 0.1, unit: 'mg', maxMg: 4, spezial: (ageDays, w) => ageDays < 30 ? null : w },
+        { name: 'Granisetron', hinweise: '1 mg/ml; 20 µg/kg, max 1 mg, Abstand 10 min, >2 Jahre', 
+          doseMin: 0.02, doseMax: 0.02, unit: 'mg', maxMg: 1 },
+        { name: 'DHBP', hinweise: '0.5 mg/ml; langsam i.v., BD-Kontrollen, Cave Long-QT', 
+          doseMin: 0.01, doseMax: 0.01, unit: 'mg', maxMg: 0.5 },
+        { name: 'Itinerol® Supp 10 mg', hinweise: 'Meclozin/Pyridoxin; >3 Mo <6 J: 10 mg, 1x/d; >2 J <6 J: 10 mg 2x/d', 
+          fixDosis: 10, unit: 'mg', einheit: 'Supp' },
+        { name: 'Itinerol® Supp 20 mg', hinweise: 'Meclozin/Pyridoxin/Coffein; >6 J <12 J: 20 mg 2x/d', 
+          fixDosis: 20, unit: 'mg', einheit: 'Supp' },
+        { name: 'Itinerol® Supp 50 mg', hinweise: 'Meclozin/Pyridoxin/Coffein; >12 J: 50 mg 2x/d', 
+          fixDosis: 50, unit: 'mg', einheit: 'Supp' },
+        { name: 'Itinerol® B60 Kapseln', hinweise: '25 mg; >6 J <12 J: 25 mg 2x/d; >12 J: 5-50 mg 2x/d', 
+          fixDosis: 25, unit: 'mg', einheit: 'p.o.' },
+    ];
+
+    const emergencyMeds = [
+        { name: 'Adenosin', hinweise: '3 mg/ml; schnell i.v., nachspülen', 
+          doseMin: 0.1, doseMax: 0.2, unit: 'mg', maxMg: 12 },
+        { name: 'Adrenalin', hinweise: '1 mg/ml verdünnen! REA: 10 µg/kg, Anaphylaxie: 1-10 µg/kg', 
+          doseMcg: true, doseMin: 1, doseMax: 10, unit: 'µg', special: 'rea:10' },
+        { name: 'Amiodaron', hinweise: '50 mg/ml; max 15 mg/kg/die', 
+          doseMin: 5, doseMax: 5, unit: 'mg', maxMg: 15 },
+        { name: 'Atropinsulfat', hinweise: '0.5 mg/ml; min 0.1 mg, max 1.0 mg', 
+          doseMin: 0.02, doseMax: 0.02, unit: 'mg', minMg: 0.1, maxMg: 1.0 },
+        { name: 'Calciumgluconat', hinweise: '10% = 0.894 mg/ml = 0.223 mmol/ml', 
+          doseMl: true, doseMin: 0.3, doseMax: 0.5, unit: 'ml' },
+        { name: 'Clemastin', hinweise: '1 mg/ml; max 2 mg', 
+          doseMin: 0.05, doseMax: 0.05, unit: 'mg', maxMg: 2 },
+        { name: 'Ephedrin', hinweise: '5 mg/ml', 
+          doseMin: 0.1, doseMax: 1.0, unit: 'mg' },
+        { name: 'Esmolol', hinweise: '10 mg/ml; langsam i.v.', 
+          doseMin: 0.5, doseMax: 1.0, unit: 'mg' },
+        { name: 'Furosemid', hinweise: '10 mg/ml', 
+          doseMin: 0.5, doseMax: 1.0, unit: 'mg' },
+        { name: 'Glucose 10%', hinweise: '100 mg/ml', 
+          doseMin: 500, doseMax: 500, unit: 'mg/kg', special: 'glucose' },
+        { name: 'Hydrocortison', hinweise: '100 mg TS; 50 mg/ml', 
+          doseMin: 2, doseMax: 4, unit: 'mg' },
+        { name: 'Lidocain', hinweise: '1% = 10 mg/ml', 
+          doseMin: 1, doseMax: 2, unit: 'mg' },
+        { name: 'Magnesiumsulfat', hinweise: '10% = 100 mg/ml = 0.4 mmol/ml', 
+          doseMin: 25, doseMax: 50, unit: 'mg', maxMg: 2000 },
+        { name: 'Natriumbicarbonat', hinweise: '8.4% = 1 mmol/ml; <10 kg verdünnen', 
+          special: 'bicarb' },
+        { name: 'Nitroglycerin', hinweise: '1 mg/ml; 25 µg/ml', 
+          doseMinMcg: 0.1, doseMaxMcg: 1, unit: 'µg' },
+        { name: 'Noradrenalin', hinweise: '1 mg/ml verdünnen', 
+          doseMinMcg: 0.05, doseMaxMcg: 2, unit: 'µg' },
+        { name: 'Phenobarbital', hinweise: '100 mg/ml', 
+          doseMin: 15, doseMax: 20, unit: 'mg' },
+        { name: 'Phenylephrine', hinweise: '100 mg/ml → 100 µg/ml', 
+          doseMinMcg: 0.1, doseMaxMcg: 0.5, unit: 'µg' },
+        { name: 'Phentolamin', hinweise: '10 mg/ml → 1 mg/ml', 
+          doseMin: 0.05, doseMax: 0.1, unit: 'mg' },
+        { name: 'Prednisolon', hinweise: '50 mg TS → 25 mg/ml', 
+          doseMin: 2, doseMax: 4, unit: 'mg' },
+        { name: 'Propranolol', hinweise: '1 mg/ml', 
+          doseMin: 0.02, doseMax: 0.1, unit: 'mg' },
+        { name: 'Ranitidin', hinweise: '10 mg/ml; max 50 mg, H₁ vor H₂', 
+          doseMin: 0.5, doseMax: 1.5, unit: 'mg', maxMg: 50 },
+        { name: 'Verapamil', hinweise: '2.5 mg/ml; >1 Jahr, langsam', 
+          doseMin: 0.1, doseMax: 0.2, unit: 'mg' },
+    ];
+
+    const premedMeds = [
+        { name: 'Midazolam', app: 'oral', dosePerKg: '0.5–0.7 (1.0) mg/kg', doseMin: 0.5, doseMax: 0.7, unit: 'mg', zeit: '30 min vor', anmerkung: 'Max: 10 mg, >11 J 7.5 mg', maxMg: 10 },
+        { name: 'Midazolam', app: 'rektal', dosePerKg: '0.5–0.7 (1.0) mg/kg', doseMin: 0.5, doseMax: 0.7, unit: 'mg', zeit: '15 min vor', anmerkung: 'Max: s.o.', maxMg: 10 },
+        { name: 'Midazolam', app: 'i.v.', dosePerKg: '0.1 mg/kg (max 0.2 mg/kg)', doseMin: 0.1, doseMax: 0.1, unit: 'mg', zeit: 'bei Einleitung', anmerkung: 'max 0.2 mg/kg, max 5 mg', maxPerKg: 0.2, maxMg: 5 },
+        { name: 'Ketamin + Midazolam', app: 'intranasal', dosePerKg: 'K:2 mg/kg + M:0.2 mg/kg', kombi: true, dose1: { name: 'Ket', min: 2, max: 2, unit: 'mg' }, dose2: { name: 'Mida', min: 0.2, max: 0.2, unit: 'mg' }, zeit: '5 min vor', anmerkung: '' },
+        { name: 'Ketamin + Midazolam', app: 'rektal', dosePerKg: 'K:2 mg/kg + M:0.5 mg/kg', kombi: true, dose1: { name: 'Ket', min: 2, max: 2, unit: 'mg' }, dose2: { name: 'Mida', min: 0.5, max: 0.5, unit: 'mg' }, zeit: '15 min vor', anmerkung: '' },
+        { name: 'Ketamin + Midazolam', app: 'oral', dosePerKg: 'K:2 mg/kg + M:0.5 mg/kg', kombi: true, dose1: { name: 'Ket', min: 2, max: 2, unit: 'mg' }, dose2: { name: 'Mida', min: 0.5, max: 0.5, unit: 'mg' }, zeit: '20 min vor', anmerkung: '' },
+        { name: 'Ketamin (mono)', app: 'rektal', dosePerKg: '4 mg/kg', doseMin: 4, doseMax: 4, unit: 'mg', zeit: '20 min vor', anmerkung: '' },
+        { name: 'Ketamin (mono)', app: 'oral', dosePerKg: '4 mg/kg', doseMin: 4, doseMax: 4, unit: 'mg', zeit: '30 min vor', anmerkung: '' },
+        { name: 'Ketamin (mono)', app: 'i.m.', dosePerKg: '8 mg/kg', doseMin: 8, doseMax: 8, unit: 'mg', zeit: 'Einleitung', anmerkung: 'Einleitungsdosis!' },
+        { name: 'Nalbuphin', app: 'i.v.', dosePerKg: '0.1–0.2 mg/kg', doseMin: 0.1, doseMax: 0.2, unit: 'mg', zeit: '30 min vor', anmerkung: '' },
+        { name: 'Clonidin', app: 'rektal', dosePerKg: '2–3 µg/kg', doseMin: 2, doseMax: 3, unit: 'µg', zeit: '30 min vor', anmerkung: '' },
+        { name: 'Clonidin', app: 'p.o.', dosePerKg: '2–3 µg/kg', doseMin: 2, doseMax: 3, unit: 'µg', zeit: '45 min vor', anmerkung: '' },
+    ];
+
+    // ---------- Komplikationen ----------
+    const complications = [
+        // Anaphylaxie
+        {
+            name: 'Anaphylaxie',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                
+                // Berechnungen für gewichtsabhängige Dosierungen
+                const adrenalinIM = (weightKg < 7.5) ? (10 * weightKg).toFixed(0) + ' µg' :
+                                    (weightKg <= 25) ? '0,15 mg (Epi-Pen® 0,15)' :
+                                    (weightKg <= 50) ? '0,3 mg (Epi-Pen® 0,3)' : '0,5 mg';
+                
+                const adrenalinIV = (1 * weightKg).toFixed(0) + ' – ' + (10 * weightKg).toFixed(0) + ' µg';
+                const adrenalinDT = '0,05 – 0,3 µg/kg/min → ' + (0.05 * weightKg).toFixed(1) + ' – ' + (0.3 * weightKg).toFixed(1) + ' µg/min';
+                
+                const noradrenalinDT = '0,05 – 0,3 µg/kg/min → ' + (0.05 * weightKg).toFixed(1) + ' – ' + (0.3 * weightKg).toFixed(1) + ' µg/min';
+                
+                const clemastin = Math.min(0.05 * weightKg, 2).toFixed(1) + ' mg (max 2 mg)';
+                const ranitidin = Math.min(1.0 * weightKg, 50).toFixed(1) + ' mg (max 50 mg)';
+                const methylprednisolon = (2 * weightKg).toFixed(1) + ' mg';
+                const volumen = (20 * weightKg).toFixed(0) + ' ml (NaCl 0,9% oder Ringeracetat)';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Prävention & Risiko</div>
+                        <ul class="complication-list-bullet">
+                            <li>Allergieanamnese (Medikamente, Latex)</li>
+                            <li>Allergologische Abklärung bei elektiven Eingriffen</li>
+                            <li>Latexallergie: Spina bifida, MMC, urologische Missbildungen</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Schweregrade (Typ I)</div>
+                        <div class="complication-grid">
+                            <div class="complication-grid-item"><strong>0:</strong> lokale Hautreaktion</div>
+                            <div class="complication-grid-item"><strong>I:</strong> generalisierte Hautreaktion</div>
+                            <div class="complication-grid-item"><strong>II:</strong> + Atemwege / GI / Tachykardie</div>
+                            <div class="complication-grid-item"><strong>III:</strong> schwerer Bronchospasmus, Schock, Bewusstlosigkeit</div>
+                            <div class="complication-grid-item"><strong>IV:</strong> Atem-/Kreislaufstillstand</div>
+                        </div>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Sofortmassnahmen (Schweregrad II–IV)</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Hilfe holen, Allergen stoppen</strong> (Infusionssystem wechseln)</li>
+                            <li><strong>O₂ 100%</strong> – ggf. Maske/Intubation</li>
+                            <li><strong>Volumen:</strong> 20 ml/kg → <span class="complication-dose">${volumen}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Adrenalin (immer zuerst i.m.)</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>i.m.:</strong> 10 µg/kg → <span class="complication-dose">${(10 * weightKg).toFixed(0)} µg</span> (M. vastus lat.)</li>
+                            <li>Epi-Pen®: ${adrenalinIM}</li>
+                            <li>Nach 5 Min. wiederholen bei ungenügender Wirkung</li>
+                            <li><strong>i.v. bei Hypotonie/schwerem Bronchospasmus:</strong> 1–2–3–5–10 µg/kg → <span class="complication-dose">${adrenalinIV}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Sekundäre Massnahmen (Prophylaxe biphasischer Verlauf)</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>H₁-Antagonist (Clemastin):</strong> 0,05 mg/kg → <span class="complication-dose">${clemastin}</span> (max 2 mg)</li>
+                            <li><strong>H₂-Antagonist (Ranitidin):</strong> 1,0 mg/kg → <span class="complication-dose">${ranitidin}</span> (max 50 mg) <span class="chip">H₁ immer vor H₂</span></li>
+                            <li><strong>Kortikosteroid (Methylprednisolon):</strong> 2 mg/kg → <span class="complication-dose">${methylprednisolon}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Persistierender Schock / Kreislaufstillstand</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Adrenalin-DT:</strong> 0,05–0,3 µg/kg/min → <span class="complication-dose">${adrenalinDT}</span></li>
+                            <li><strong>Noradrenalin-DT:</strong> 0,05–0,3 µg/kg/min → <span class="complication-dose">${noradrenalinDT}</span></li>
+                            <li>CPR nach Leitlinien + Adrenalin 10 µg/kg alle 3–5 Min.</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Tertiäre Massnahmen</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Tryptase:</strong> nach 1–2 h und nach 24 h (Station)</li>
+                            <li><strong>Allergologische Abklärung</strong> nach der Reaktion</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Wichtigste Auslöser:</strong> Muskelrelaxantien (Succinylcholin > Rocuronium), Latex (80% bei Kindern), Antibiotika (Kreuzallergie Penicillin/Cephalosporine)
+                    </div>
+                    <!-- KISPI-Satz wurde entfernt -->
+                `;
+            }
+        },
+        // Laryngospasmus
+        {
+            name: 'Laryngospasmus',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const ageYears = ageDays / 365;
+                const propofol = (0.5 * weightKg).toFixed(1) + ' – ' + (1.0 * weightKg).toFixed(1) + ' mg';
+                const mivacurium = (0.2 * weightKg).toFixed(1) + ' mg (0,2 mg/kg)';
+                const atropin = (0.02 * weightKg).toFixed(2) + ' mg (min 0,1 mg)';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Prävention</div>
+                        <ul class="complication-list-bullet">
+                            <li>Inhalative Einleitung: ruhig, sanft, kein übermässiger Druck</li>
+                            <li>Wachextubation (Augen offen, Mimik) – sicherer</li>
+                            <li>Schlafendextubation: nur bei tiefer Anästhesie, Spontanatmung</li>
+                            <li>Extubation mit 100% O₂, sofortige Kontrolle</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Vorgehen bei Laryngospasmus</div>
+                        <ul class="complication-list-bullet">
+                            <li>Guedel, 100% O₂, Hilfe holen</li>
+                            <li>Zweihand-Maskenbeatmung mit Esmarch, PIP bis 50 cmH₂O</li>
+                            <li><strong>Bei Normoxämie:</strong> Propofol 0,5–1 mg/kg i.v. → <span class="complication-dose">${propofol}</span></li>
+                            <li><strong>Bei SpO₂ <70% oder Bradykardie:</strong> Mivacurium 0,2 mg/kg i.v. → <span class="complication-dose">${mivacurium}</span> (mit 10 ml NaCl spülen)</li>
+                            <li><1 Jahr + Puls <60/min → Herzdruckmassage</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Ohne i.v.-Zugang</div>
+                        <ul class="complication-list-bullet">
+                            <li>Maskenbeatmung, bei Erfolglosigkeit i.o. Nadel</li>
+                            <li>Mivacurium 0,2 mg/kg i.o. → <span class="complication-dose">${mivacurium}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Risikofaktoren:</strong> respiratorischer Infekt (bis 4–6 Wochen), Ketalar, ORL/LKG-Patienten, junges Alter, Hypoxämie, unerfahrener Anästhesist.
+                    </div>
+                `;
+            }
+        },
+        // Bronchospasmus
+        {
+            name: 'Bronchospasmus',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const adrenalin = (1 * weightKg).toFixed(0) + ' µg (1 µg/kg)';
+                const prednisolon = (2 * weightKg).toFixed(1) + ' – ' + (4 * weightKg).toFixed(1) + ' mg';
+                const ketamin = (0.5 * weightKg).toFixed(1) + ' – ' + (1 * weightKg).toFixed(1) + ' mg';
+                const mgso4 = (50 * weightKg).toFixed(0) + ' mg (max 2 g)';
+                const lidocainIT = (1 * weightKg).toFixed(1) + ' mg (intratracheal)';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Prävention</div>
+                        <ul class="complication-list-bullet">
+                            <li>Risikopatient: Asthma, Atemwegsinfekt, Frühgeburtlichkeit</li>
+                            <li>Elektiv OP verschieben, Prednisolon 2–4 mg/kg i.v.</li>
+                            <li>Prämedikation mit Ventolin + Nasivin</li>
+                            <li>Inhalative Anästhesie bevorzugen, Histaminliberatoren vermeiden</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Intraoperativ (am Tubus)</div>
+                        <ul class="complication-list-bullet">
+                            <li>Stimulus stoppen, FiO₂ 100%, manuelle Beatmung (Cave Barotrauma)</li>
+                            <li>Anästhesie vertiefen, Relaxation</li>
+                            <li>Beatmung: ↑ Druck, ↑ Exspirationszeit, ↓ AF, permissive Hyperkapnie</li>
+                            <li><strong>Schwer (silent chest):</strong> Adrenalin 1 µg/kg i.v. → <span class="complication-dose">${adrenalin}</span> repetitiv</li>
+                            <li>Lidocain intratracheal 1 mg/kg → <span class="complication-dose">${lidocainIT}</span></li>
+                            <li><strong>Leicht-mittel:</strong> Salbutamol Aerochamber (<6 J 4–6 Hübe, >6 J 6–12)</li>
+                            <li>Bei Therapierefraktär: Prednisolon 2–4 mg/kg i.v. → <span class="complication-dose">${prednisolon}</span></li>
+                            <li>Ketamin 0,5–1 mg/kg i.v. → <span class="complication-dose">${ketamin}</span></li>
+                            <li>MgSO₄ 50 mg/kg → <span class="complication-dose">${mgso4}</span> (max 2 g)</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Postoperativ</div>
+                        <ul class="complication-list-bullet">
+                            <li>Adrenalin 1 µg/kg i.v. wiederholen, ggf. Reintubation</li>
+                            <li>Inhalation mit Ventolin 1 ml + 3 ml NaCl 0,9% repetitiv</li>
+                            <li>Adrenalin-Inhalation 5 mg unverdünnt</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Differentialdiagnose:</strong> DOPES (Displacement, Obstruction, Pneumothorax, Equipment, Stomach)
+                    </div>
+                `;
+            }
+        },
+        // Emergence Delir
+        {
+            name: 'Emergence Delir',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const propofol = (0.5 * weightKg).toFixed(1) + ' mg';
+                const ketamin = (1 * weightKg).toFixed(1) + ' mg';
+                const dhbp = (0.01 * weightKg).toFixed(2) + ' mg (10 µg/kg, max 0.5 mg)';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Definition & Risiko</div>
+                        <ul class="complication-list-bullet">
+                            <li>Aufwachdelir: mentale Störung, Verwirrung, Jammern, Unruhe</li>
+                            <li>Inzidenz 25–80% (v.a. 2–5 Jahre, HNO/Augen, Pavor nocturnus)</li>
+                            <li>Risikofaktoren: Sevofluran/Desfluran, Alter 2–5 J, Pavor nocturnus</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Prophylaxe</div>
+                        <ul class="complication-list-bullet">
+                            <li>Bei Sevofluran + Schlafextubation: Propofol 1 mg/kg i.v. vor Extubation → <span class="complication-dose">${(1*weightKg).toFixed(1)} mg</span></li>
+                            <li>Bei Risiko (früheres ED, Pavor): Propofol-Anästhesie, DHBP 10 µg/kg 20 min vor Extubation → <span class="complication-dose">${dhbp}</span></li>
+                            <li>Schwere Fälle: Midazolam + Ketamin p.o.</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Therapie</div>
+                        <ul class="complication-list-bullet">
+                            <li>Analgesie überprüfen, ggf. nachgeben</li>
+                            <li>Propofol 0,5 mg/kg i.v. → <span class="complication-dose">${propofol}</span></li>
+                            <li>Ketamin 1 mg/kg i.v. → <span class="complication-dose">${ketamin}</span></li>
+                            <li>Propofol + DHBP 10 µg/kg wiederholen (max 2x)</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Nachsorge:</strong> Eltern informieren, Postmedikationseintrag, Venenzugang doppelt sichern.
+                    </div>
+                `;
+            }
+        },
+        // Atemwegsinfektionen
+        {
+            name: 'Atemwegsinfektionen',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const ageYears = ageDays / 365;
+                
+                // Nasivin-Dosierung altersabhängig
+                let nasivin = '';
+                if (ageYears < 1) nasivin = 'Nasivin® 0,01% 1-2 Trpf./Seite';
+                else if (ageYears < 6) nasivin = 'Nasivin® 0,025% 1-2 Trpf./Seite';
+                else nasivin = 'Nasivin® 0,05% 1-2 Trpf./Seite';
+                
+                let rinosedin = '';
+                if (ageYears < 1) rinosedin = 'Rinosedin® nicht empfohlen';
+                else if (ageYears < 6) rinosedin = 'Rinosedin® 0,05% 1-2 Trpf./Seite';
+                else rinosedin = 'Rinosedin® 0,1% 1-2 Trpf./Seite';
+                
+                const salbutamol = '1 ml + 3 ml NaCl 0,9%';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Risikopatient erkennen</div>
+                        <ul class="complication-list-bullet">
+                            <li>gelblich-grünliche vs. wässrige Rhinorrhoe</li>
+                            <li>produktiver vs. trockener Husten</li>
+                            <li>Fieber, reduzierter AZ, Tachypnoe, Dyspnoe</li>
+                            <li>URTI (obere Atemwege) vs. LRTI (untere Atemwege)</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Entscheidung OP durchführen/absagen</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>URTI:</strong> OP durchführen (ausser schlechter AZ, junger Patient)</li>
+                            <li><strong>LRTI:</strong> grosszügig absagen, neuer Termin frühestens 2 Wochen nach Symptomfreiheit</li>
+                            <li><strong>ORL-OP:</strong> grosszügig durchführen (therapeutisch)</li>
+                            <li>Absagen bei Temperatur >38,5°C oder reduziertem AZ</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Perioperative Prophylaxe</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Nasivin®:</strong> ${nasivin}</li>
+                            <li><strong>Rinosedin®:</strong> ${rinosedin}</li>
+                            <li><strong>Salbutamol-Inhalation:</strong> ${salbutamol} (sofort/über Nacht 6h)</li>
+                            <li>Intraoperativ: Maske > LMA > ITN, Sevofluran/Ketamin, ausreichende Tiefe, Guedel, Sekrete absaugen, Wach-Extubation</li>
+                            <li>Postoperativ: Inhalation fortführen, NSAR (abschwellend)</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Bedeutung:</strong> Deutlich erhöhte perioperative Morbidität (PRAE): Laryngospasmus 16%, Bronchospasmus 11%, SpO₂-Abfall 10,5%.
+                    </div>
+                `;
+            }
+        },
+        // Maligne Hyperthermie (angepasst)
+        {
+            name: 'Maligne Hyperthermie',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const dantrolen = (2.5 * weightKg).toFixed(1) + ' mg (= ' + Math.ceil(weightKg/8) + ' Flaschen à 20 mg)';
+                const nabic = (2 * weightKg).toFixed(0) + ' ml NaBic 8,4% 1:1 verdünnt (1–2 mmol/kg)';
+                const calcium = (0.3 * weightKg).toFixed(1) + ' – ' + (0.5 * weightKg).toFixed(1) + ' ml Calciumgluconat 10% (max 10 ml)';
+                const insulin = (0.25 * weightKg).toFixed(2) + ' IE (0,25 IE/kg) + Glucose 20% ' + (5 * weightKg).toFixed(0) + ' ml';
+                const salbutamolInh = (weightKg < 25) ? '2,5 mg (0,5 ml)' : '5 mg (1,0 ml)';
+                const amiodaron = (5 * weightKg).toFixed(1) + ' mg über 1h, dann 5–15 µg/kg/min';
+                const esmolol = (100 * weightKg).toFixed(0) + ' – ' + (500 * weightKg).toFixed(0) + ' µg';
+                const diureseZiel = (1 * weightKg).toFixed(0) + ' – ' + (2 * weightKg).toFixed(0) + ' ml/h';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Sofortmassnahmen</div>
+                        <ul class="complication-list-bullet">
+                            <li>Trigger stoppen (Verdampfer entfernen)</li>
+                            <li>Hyperventilation 100% O₂, Frischgasfluss >10 l/min</li>
+                            <li>Hilfe rufen, wechsel auf triggerfreie Narkose (Propofol, Opioide, Ketamin)</li>
+                            <li>CO₂-Absorber wechseln</li>
+                            <li><strong>Dantrolen 2,5 mg/kg i.v.</strong> → <span class="complication-dose">${dantrolen}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Sekundärmassnahmen</div>
+                        <ul class="complication-list-bullet">
+                            <li>Aktive Kühlung bis Temp <38,5°C (kalte Infusionen, Eis)</li>
+                            <li>Monitoring: Art. Kanüle, DK, ZVK</li>
+                            <li>Diurese forcieren: <strong>mind. ${diureseZiel}</strong> (1–2 ml/kg/h) mit Volumen/Diuretika</li>
+                            <li>Eingriff (wenn möglich) beenden</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Bei Acidose</div>
+                        <ul class="complication-list-bullet">
+                            <li>NaBic 8,4% 1:1 verdünnt 2 ml/kg → <span class="complication-dose">${nabic}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Bei Hyperkaliämie</div>
+                        <ul class="complication-list-bullet">
+                            <li>Calciumgluconat 10% 0,3–0,5 ml/kg → <span class="complication-dose">${calcium}</span></li>
+                            <li>Insulin-Glucose: 0,25 IE/kg + 1 g/kg Glucose → <span class="complication-dose">${insulin}</span></li>
+                            <li>Salbutamol-Inhalation: ${salbutamolInh}</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Antiarrhythmika</div>
+                        <ul class="complication-list-bullet">
+                            <li>Amiodaron 5 mg/kg über 1h → <span class="complication-dose">${amiodaron}</span></li>
+                            <li>Esmolol 100–500 µg/kg i.v. → <span class="complication-dose">${esmolol}</span></li>
+                            <li>KEINE Ca²⁺-Antagonisten (Interaktion mit Dantrolen)</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Frühsymptome</div>
+                        <ul class="complication-list-bullet">
+                            <li>Hyperkapnie, Tachykardie, Masseterspasmus, generalisierte Rigidität</li>
+                            <li>Spätsymptome: Hyperthermie, Rhabdomyolyse, Nierenversagen</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Hotline:</strong> Swiss 24h – +41 61 265 44 00
+                    </div>
+                `;
+            }
+        },
+        // Krampfanfall
+        {
+            name: 'Krampfanfall',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const ageYears = ageDays / 365;
+                
+                const midazolamNasal = (0.2 * weightKg).toFixed(1) + ' mg (max 1 ml/Nasenloch)';
+                const lorazepam = (weightKg < 40) ? (0.1 * weightKg).toFixed(1) + ' mg' : '4 mg';
+                const clonazepam = (weightKg < 20) ? (0.05 * weightKg).toFixed(2) + ' mg' : '1 mg';
+                const phenobarbital = (15 * weightKg).toFixed(0) + ' – ' + (20 * weightKg).toFixed(0) + ' mg';
+                const propofol = (1 * weightKg).toFixed(1) + ' mg (max 2 mg/kg)';
+                const glucose = (0.5 * weightKg).toFixed(1) + ' g = ' + (1.0 * weightKg).toFixed(1) + ' ml Glucose 50%';
+                // Midazolam refraktär
+                const midazolamRefraktär = (0.1 * weightKg).toFixed(1) + ' – ' + (0.2 * weightKg).toFixed(1) + ' mg';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Allgemeine Massnahmen</div>
+                        <ul class="complication-list-bullet">
+                            <li>A-B-C sichern, Oxygenierung</li>
+                            <li>Blutzucker: bei <3,5 mmol/l Glucose 0,5 g/kg i.v. → <span class="complication-dose">${glucose}</span></li>
+                            <li>Temperatur >38,5°C → Paracetamol Supp.</li>
+                            <li>Alle Kinder nach Krampf zur Überwachung auf Notfallstation</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Kein i.v.-Zugang</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Midazolam nasal</strong> 0,2 mg/kg (MAD-Device) → <span class="complication-dose">${midazolamNasal}</span></li>
+                            <li>Wiederholung nach 10 min, wenn kein Zugang</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">i.v./i.o.-Zugang vorhanden</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>1. Lorazepam</strong> 0,1 mg/kg (max 4 mg) → <span class="complication-dose">${lorazepam}</span></li>
+                            <li><strong>Alternativ Clonazepam</strong> 0,05 mg/kg (1:1 verdünnen) → <span class="complication-dose">${clonazepam}</span></li>
+                            <li><strong>2. Phenobarbital</strong> 15–20 mg/kg → <span class="complication-dose">${phenobarbital}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Refraktärer Status</div>
+                        <ul class="complication-list-bullet">
+                            <li>Midazolam 0,1–0,2 mg/kg i.v. → <span class="complication-dose">${midazolamRefraktär}</span></li>
+                            <li>Propofol 1–2 mg/kg i.v. → <span class="complication-dose">${propofol}</span> (nur wenn Mitochondriopathie ausgeschlossen)</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Wichtig:</strong> Bei anhaltenden Krämpfen mit Ateminsuffizienz frühzeitig beatmen und relaxieren.
+                    </div>
+                `;
+            }
+        },
+        // LA-Intoxikation
+        {
+            name: 'LA-Intoxikation',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const adrenalin = (1 * weightKg).toFixed(0) + ' – ' + (10 * weightKg).toFixed(0) + ' µg';
+                const intralipid = (1.5 * weightKg).toFixed(1) + ' ml (Intralipid 20%) über 1 min, max. 3×';
+                const testdosis = (0.2 * weightKg).toFixed(1) + ' ml (max 3 ml)';
+                
+                // Maximaldosen (als Info)
+                const bupivacain = (2.5 * weightKg).toFixed(1) + ' mg';
+                const lidocain = (7 * weightKg).toFixed(1) + ' mg';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Prophylaxe</div>
+                        <ul class="complication-list-bullet">
+                            <li>Dosisbegrenzung, Adrenalinzusatz 5 µg/ml</li>
+                            <li>Aspirationstest, Testdosis 0,2 ml/kg (max 3 ml) → <span class="complication-dose">${testdosis}</span></li>
+                            <li>Langsame, fraktionierte Injektion über 60–90 s</li>
+                            <li>Kontinuierliche EKG- und BD-Kontrolle</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Massnahmen (wach)</div>
+                        <ul class="complication-list-bullet">
+                            <li>Stop LA, Hilfe holen</li>
+                            <li>Oxygenierung, ggf. Maskenbeatmung/Intubation</li>
+                            <li>Bei Krämpfen: Propofol, Midazolam, Pentothal (kleine Dosen)</li>
+                            <li>Bei Hypotonie/Bradykardie: Adrenalin 1–10 µg/kg → <span class="complication-dose">${adrenalin}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Massnahmen (anästhesiert)</div>
+                        <ul class="complication-list-bullet">
+                            <li>FiO₂ 100%, Hyperventilation, ggf. Relaxation</li>
+                            <li>Adrenalin wie oben, CPR bei Kreislaufstillstand</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Lipidtherapie</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Intralipid 20% Bolus 1,5 ml/kg</strong> über 1 min → <span class="complication-dose">${intralipid}</span></li>
+                            <li>Bolus alle 3–5 min wiederholen (max 3×) bis stabil</li>
+                            <li>CPR während Lipidtherapie fortsetzen</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Maximaldosen:</strong> Bupivacain 2,5 mg/kg, Lidocain 7 mg/kg. Bei Neugeborenen/Säuglingen schneller toxisch! Kein Propofol als Lipidersatz.
+                    </div>
+                `;
+            }
+        },
+        // Hyperkaliämie
+        {
+            name: 'Hyperkaliämie',
+            content: function(weight, ageDays) {
+                const weightKg = weight;
+                const ageYears = ageDays / 365;
+                const calcium = (0.3 * weightKg).toFixed(1) + ' – ' + (0.5 * weightKg).toFixed(1) + ' ml Calciumgluconat 10%';
+                const nabic = (2 * weightKg).toFixed(0) + ' ml NaBic 8,4% (1:1 verdünnt)';
+                const salbutamolInh = (weightKg < 25) ? '2,5 mg (0,5 ml)' : '5 mg (1,0 ml)';
+                const insulin = (0.25 * weightKg).toFixed(2) + ' IE + Glucose 20% ' + (5 * weightKg).toFixed(0) + ' ml';
+                const lasix = (0.5 * weightKg).toFixed(1) + ' mg';
+                
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Definition & Symptome</div>
+                        <ul class="complication-list-bullet">
+                            <li>Plasma K⁺ >5,5 mmol/l (Säugling), >6,0 mmol/l (Neugeb.)</li>
+                            <li>Kardiale Symptome: erhöhte T-Welle (ab 7,0), ST-Senkung (ab 8,0), QRS-Verbreiterung (>9,0)</li>
+                            <li>Nicht-kardial: Parästhesien, Muskelschwäche</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Perakut (bei kardialen Symptomen)</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>1. Calciumgluconat 10%</strong> 0,3–0,5 ml/kg langsam i.v. → <span class="complication-dose">${calcium}</span></li>
+                            <li><strong>2. NaBic 8,4%</strong> 1:1 verdünnt 2 ml/kg i.v. → <span class="complication-dose">${nabic}</span></li>
+                            <li><strong>3. Salbutamol-Inhalation</strong> ${salbutamolInh}</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Akut</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>4. Insulin + Glucose</strong> 0,25 IE/kg + 1 g/kg Glucose 20% → <span class="complication-dose">${insulin}</span> über 20 min</li>
+                            <li><strong>5. Lasix</strong> 0,5 mg/kg i.v. → <span class="complication-dose">${lasix}</span></li>
+                            <li><strong>6. Dialyse</strong></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Cave:</strong> immer Doppelbestimmung um Abnahmefehler auszuschliessen!
+                    </div>
+                `;
+            }
+        },
+
+        // Pediatric Life Support
+        {
+            name: 'Pediatric Life Support (PLS)',
+            content: function(weight, ageDays) {
+                const w = weight;
+                const shock4 = (4 * w).toFixed(0) + ' J';
+                const shock8 = Math.min(8 * w, 360).toFixed(0) + ' J (max 360 J)';
+                const adrenalin = (0.01 * w).toFixed(2) + ' mg i.v./i.o. (= ' + (0.1 * w).toFixed(1) + ' ml Adr. 1:10000)';
+                const amiodaron3 = Math.min(5 * w, 300).toFixed(0) + ' mg (max 300 mg)';
+                const amiodaron5 = Math.min(5 * w, 150).toFixed(0) + ' mg (max 150 mg)';
+
+                return `
+                    <div class="complication-section">
+                        <div class="complication-section-title">Erkennen &amp; Ersthilfe</div>
+                        <ul class="complication-list-bullet">
+                            <li>Kein Lebenszeichen und/oder Bradykardie &lt;60/min mit schlechter Perfusion</li>
+                            <li><strong>Rettungsdienst / Reanimationsteam rufen</strong></li>
+                            <li>5 Beatmungshübe, dann CPR <strong>15:2</strong></li>
+                            <li>Defibrillator / Monitor anschliessen</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Rhythmusanalyse</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Schockbar (VF/pVT):</strong> 1 Schock → sofort CPR 2 min weiter</li>
+                            <li><strong>Nicht schockbar (Bradykardie, Asystolie, PEA):</strong> sofort Adrenalin i.v./i.o. → CPR 2 min weiter</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Defibrillation (schockbare Rhythmen)</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>1. Schock:</strong> 4 J/kg → <span class="complication-dose">${shock4}</span></li>
+                            <li>Alle 2 min wiederholen bei 4 J/kg</li>
+                            <li>Ab 5. Schock eskalieren auf 8 J/kg → <span class="complication-dose">${shock8}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Adrenalin i.v./i.o. — 10 µg/kg (max 1 mg)</div>
+                        <ul class="complication-list-bullet">
+                            <li><strong>Nicht schockbar:</strong> so früh wie möglich, dann alle 4 min</li>
+                            <li><strong>Schockbar:</strong> nach 4 min, dann alle 4 min</li>
+                            <li><span class="complication-dose">${adrenalin}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Amiodaron i.v./i.o. — 5 mg/kg (schockbar)</div>
+                        <ul class="complication-list-bullet">
+                            <li>Nach 3. Schock → <span class="complication-dose">${amiodaron3}</span></li>
+                            <li>Nach 5. Schock → <span class="complication-dose">${amiodaron5}</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Während CPR</div>
+                        <ul class="complication-list-bullet">
+                            <li>Hochqualitative Thoraxkompressionen: Frequenz, Tiefe, Entlastung</li>
+                            <li>BMV mit 100% O₂ (2-Personen-Technik)</li>
+                            <li>Bei liegendem TT/SGA: kontinuierliche Kompressionen, Beatmung 25 (&lt;1 J), 20 (1–8 J), 15 (8–12 J), 10 (&gt;12 J)/min</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Reversible Ursachen (4H / 4T)</div>
+                        <ul class="complication-list-bullet">
+                            <li>Hypoxie · Hypovolämie · Hypo-/Hyperkaliämie · Hypothermie</li>
+                            <li>Toxine · Tamponade (kardial) · Tension-Pneumothorax · Thromboembolie</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-section">
+                        <div class="complication-section-title">Post-ROSC</div>
+                        <ul class="complication-list-bullet">
+                            <li>SpO₂ 94–98%, Ventilation PaCO₂ 4,6–6 kPa (35–45 mmHg)</li>
+                            <li>Systolischer und mittlerer RR &gt;10. Perzentile für Alter</li>
+                            <li>Hyperthermie vermeiden, Normoglykämie anstreben</li>
+                            <li>Präzipitierende Ursachen behandeln</li>
+                        </ul>
+                    </div>
+
+                    <div class="complication-note">
+                        <strong>Quelle:</strong> European Resuscitation Council – Pediatric Life Support Algorithm
+                    </div>
+                `;
+            }
+        }
+    ];
+
+    // DOM Elements
+    const weightInput = document.getElementById('weightInput');
+    const weightSlider = document.getElementById('weightSlider');
+    const sliderValue = document.getElementById('sliderValue');
+    const ageYears = document.getElementById('ageYears');
+    const ageMonths = document.getElementById('ageMonths');
+    const warningBadge = document.getElementById('warningBadge');
+
+    // Tab switching
+    document.querySelectorAll('.tab-button').forEach(btn => {
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('.tab-button').forEach(b => b.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            btn.classList.add('active');
+            document.getElementById(btn.dataset.tab + 'Tab').classList.add('active');
+        });
+    });
+
+    // Info toggle for premed
+    const toggleBtn = document.getElementById('toggleInfoIcon');
+    const infoBox = document.getElementById('hiddenInfoBox');
+    toggleBtn.addEventListener('click', () => {
+        infoBox.style.display = infoBox.style.display === 'none' ? 'block' : 'none';
+        toggleBtn.querySelector('.arrow').textContent = infoBox.style.display === 'block' ? '▼' : '▶';
+    });
+
+    // Airway helpers
+    const tubeSizes = [2.0,2.5,3.0,3.0,3.5,4.0,4.5,5.0,5.5,6.0,6.5,7.0,7.5];
+    function getAirwayClass(weight, ageM) {
+        if (weight < 0.7) return 1; if (weight < 1.2) return 2; if (weight < 3.0) return 3;
+        if (ageM < 8) return 4; if (ageM < 24) return 5; if (ageM < 48) return 6;
+        if (ageM < 72) return 7; if (ageM < 96) return 8; if (ageM < 120) return 9;
+        if (ageM < 144) return 10; if (ageM < 168) return 11; if (ageM < 192) return 12;
+        return 13;
+    }
+    function getSuction(t) { return t<=2.0?'Müly Ch 5':t<=2.5?'Argyle Ch 6':t<=3.0?'Argyle Ch 8':t<=4.0?'Argyle Ch 10':t<=5.5?'Argyle Ch 14':'Argyle Ch 18'; }
+    function getLMA(w) { return w<5?'1.0':w<10?'1.5':w<20?'2.0':w<30?'2.5':w<50?'3.0':w<70?'4.0':'5.0'; }
+    function getMask(c) { return c<=2?'00':c<=3?'0–1':c<=5?'2':c<=7?'3–4':c<=10?'gelb':'rot'; }
+    function getGuedel(c) { return c<=2?'rosa':c<=4?'blau':c<=6?'schwarz':c<=9?'weiss':'grün'; }
+    function getSpatel(c) { return c<=2?'0':c<=4?'1':c<=6?'2':c<=9?'3':'4'; }
+    function getBeutel(w) { return w<10?'0.5 l (<10 kg)':w<=25?'1.0 l (10–25 kg)':'1.5 l (>25 kg)'; }
+    function getAmbu(w) { return w<5?'Mark IV Baby 300 ml':'Ambu® Mark IV 1300 ml'; }
+    function getHME(w) { return w<10?'klein (<10 kg)':w<50?'mittel (<50 kg)':'groß (>50 kg)'; }
+
+    // Vitals
+    function getVitals(w) {
+        if (w<5) return {hr:'120–160',sys:'70–90',dia:'50–60',af:'30–40'};
+        if (w<10) return {hr:'110–150',sys:'80–100',dia:'55–65',af:'25–35'};
+        if (w<20) return {hr:'90–130',sys:'85–105',dia:'60–70',af:'20–30'};
+        if (w<35) return {hr:'70–110',sys:'90–115',dia:'65–75',af:'16–24'};
+        return {hr:'60–100',sys:'100–120',dia:'70–80',af:'12–20'};
+    }
+
+    function getExtendedVitals(weight, ageMonthsTotal) {
+        const base = getVitals(weight);
+        const parseRange = (range) => {
+            const parts = range.split('–').map(s => parseInt(s.trim()));
+            return { min: parts[0], max: parts[1] };
+        };
+        const sysRange = parseRange(base.sys);
+        const diaRange = parseRange(base.dia);
+        const madMin = Math.round((sysRange.min + 2*diaRange.min)/3);
+        const madMax = Math.round((sysRange.max + 2*diaRange.max)/3);
+        const mad = madMin === madMax ? madMin : madMin + '–' + madMax;
+
+        let hbRange;
+        if (ageMonthsTotal < 1) hbRange = '14–20';
+        else if (ageMonthsTotal < 12) hbRange = '9.5–13.5';
+        else if (ageMonthsTotal < 60) hbRange = '11–14';
+        else if (ageMonthsTotal < 144) hbRange = '11.5–14.5';
+        else hbRange = '12–18';
+
+        const azvMin = Math.round(6 * weight);
+        const azvMax = Math.round(8 * weight);
+        const azv = azvMin === azvMax ? azvMin + ' ml' : azvMin + '–' + azvMax + ' ml';
+
+        const vo2Min = Math.round(6 * weight);
+        const vo2Max = Math.round(8 * weight);
+        const vo2 = vo2Min === vo2Max ? vo2Min + ' ml/min' : vo2Min + '–' + vo2Max + ' ml/min';
+
+        const bvMin = Math.round(75 * weight);
+        const bvMax = Math.round(80 * weight);
+        const bv = bvMin === bvMax ? bvMin + ' ml' : bvMin + '–' + bvMax + ' ml';
+
+        const diureseMin = Math.round(1 * weight);
+        const diureseMax = Math.round(2 * weight);
+        const diurese = diureseMin === diureseMax ? diureseMin + ' ml/h' : diureseMin + '–' + diureseMax + ' ml/h';
+
+        return {
+            hr: base.hr + ' /min',
+            sys: base.sys + ' mmHg',
+            dia: base.dia + ' mmHg',
+            af: base.af + ' /min',
+            mad: mad + ' mmHg',
+            hb: hbRange + ' g/dl',
+            azv: azv,
+            vo2: vo2,
+            bv: bv,
+            diurese: diurese,
+            crt: '<2 sec',
+            temp: '36.5–37.5 °C',
+            spo2: '>95 %',
+            etco2: '35–45 mmHg'
+        };
+    }
+
+    function calcDose(med, w, yr) {
+        if (med.special === 'sux') {
+            const d = yr<1?3:yr<6?2:yr<12?1.5:1;
+            return (d*w).toFixed(1)+' mg';
+        }
+        if (med.doseMin !== undefined && med.unit === 'mg') {
+            let mn = med.doseMin * w, mx = med.doseMax * w;
+            if (med.maxMg) { mn = Math.min(mn, med.maxMg); mx = Math.min(mx, med.maxMg); }
+            return mn.toFixed(1) + (mn !== mx ? ' – ' + mx.toFixed(1) : '') + ' mg';
+        }
+        if (med.doseMinMcg !== undefined) {
+            let mn = med.doseMinMcg * w, mx = med.doseMaxMcg * w;
+            if (med.maxMcg) { mn = Math.min(mn, med.maxMcg); mx = Math.min(mx, med.maxMcg); }
+            return mn.toFixed(0) + (mn !== mx ? ' – ' + mx.toFixed(0) : '') + ' µg';
+        }
+        if (med.doseMinMcgMin !== undefined) {
+            return med.doseMinMcgMin + ' – ' + med.doseMaxMcgMin + ' µg/kg/min';
+        }
+        if (med.doseMgKg !== undefined) {
+            let d = med.doseMgKg * w;
+            if (med.maxMg && d > med.maxMg) d = med.maxMg;
+            return d.toFixed(1) + ' ' + med.unit;
+        }
+        if (med.doseMcgKg !== undefined) {
+            let d = med.doseMcgKg * w;
+            return d.toFixed(0) + ' µg';
+        }
+        if (med.doseMlKg !== undefined) {
+            let d = med.doseMlKg * w;
+            if (med.minMl && d < med.minMl) d = med.minMl;
+            return d.toFixed(2) + ' ml';
+        }
+        return '?';
+    }
+
+    function calcPonvDose(med, w, ageDays) {
+        if (med.fixDosis) return med.fixDosis + ' mg (' + med.einheit + ')';
+        if (med.spezial && !med.spezial(ageDays, w)) return 'Kontraindiziert';
+        let d = med.doseMin * w;
+        if (med.maxMg) d = Math.min(d, med.maxMg);
+        if (med.minMg) d = Math.max(d, med.minMg);
+        return d.toFixed(1) + ' mg';
+    }
+
+    function calcEmergencyDose(med, w) {
+        if (med.special === 'bicarb') return 'nach BGA';
+        if (med.doseMl) {
+            let mn = med.doseMin * w, mx = med.doseMax * w;
+            return mn.toFixed(1) + (mn !== mx ? ' – ' + mx.toFixed(1) : '') + ' ml';
+        }
+        if (med.doseMcg) {
+            let mn = med.doseMin * w, mx = med.doseMax * w;
+            if (med.maxMg && mx > med.maxMg*1000) mx = med.maxMg*1000;
+            return mn.toFixed(0) + (mn !== mx ? ' – ' + mx.toFixed(0) : '') + ' µg';
+        }
+        if (med.doseMinMcg) {
+            let mn = med.doseMinMcg * w, mx = med.doseMaxMcg * w;
+            return mn.toFixed(0) + (mn !== mx ? ' – ' + mx.toFixed(0) : '') + ' µg';
+        }
+        let mn = med.doseMin * w, mx = med.doseMax * w;
+        if (med.maxMg && mx > med.maxMg) mx = med.maxMg;
+        if (med.minMg && mn < med.minMg) mn = med.minMg;
+        return mn.toFixed(1) + (mn !== mx ? ' – ' + mx.toFixed(1) : '') + ' mg';
+    }
+
+    function calcPremed(pm, w) {
+        if (pm.kombi) {
+            const d1 = pm.dose1, d2 = pm.dose2;
+            const s1 = (d1.min * w).toFixed(1) + ' ' + d1.unit;
+            const s2 = (d2.min * w).toFixed(1) + ' ' + d2.unit;
+            return d1.name + ': ' + s1 + ' / ' + d2.name + ': ' + s2;
+        }
+        if (pm.unit === 'mg') {
+            let mn = pm.doseMin * w, mx = pm.doseMax * w;
+            if (pm.maxMg) { mn = Math.min(mn, pm.maxMg); mx = Math.min(mx, pm.maxMg); }
+            if (pm.maxPerKg) mx = Math.min(mx, pm.maxPerKg * w);
+            return mn === mx ? mn.toFixed(1) + ' mg' : mn.toFixed(1) + ' – ' + mx.toFixed(1) + ' mg';
+        }
+        if (pm.unit === 'µg') {
+            let mn = pm.doseMin * w, mx = pm.doseMax * w;
+            return mn === mx ? mn.toFixed(0) + ' µg' : mn.toFixed(0) + ' – ' + mx.toFixed(0) + ' µg';
+        }
+        return '?';
+    }
+
+    function calcBasis(item, w, d) {
+        if (item.bedingung && !item.bedingung(d, w)) return null;
+        if (item.unit.includes('Einzeldosis')) {
+            return item.doseMin + ' mg';
+        }
+        let mn = item.doseMin * w;
+        let mx = item.doseMax * w;
+        if (item.maxMg) {
+            mn = Math.min(mn, item.maxMg);
+            mx = Math.min(mx, item.maxMg);
+        }
+        mn = Math.round(mn);
+        mx = Math.round(mx);
+        return mn === mx ? mn + ' mg' : mn + ' – ' + mx + ' mg';
+    }
+
+    function calcVolume(med, w) {
+        if (!med.konz) return '—';
+        let dosis = Math.min(med.doseMin * w, med.maxMg);
+        let vol = dosis / med.konz;
+        return vol.toFixed(1) + ' ml';
+    }
+
+    // Haupt-Update-Funktion
+    function update() {
+        let w = parseFloat(weightInput.value) || 12;
+        const yr = parseInt(ageYears.value) || 0;
+        const mo = parseInt(ageMonths.value) || 0;
+        const ageDays = yr * 365 + mo * 30;
+        const ageMonthsTotal = yr * 12 + mo;
+
+        if (w < 2) {
+            warningBadge.textContent = '⚠️ Frühchen / Neugeborenes – Vorsicht!';
+            warningBadge.classList.add('visible');
+        } else if (w > 50) {
+            warningBadge.textContent = '⚠️ Sehr hohes Gewicht – Erwachsenennähe';
+            warningBadge.classList.add('visible');
+        } else {
+            warningBadge.classList.remove('visible');
+        }
+
+        // Airway
+        const c = getAirwayClass(w, ageMonthsTotal);
+        const t = tubeSizes[c-1];
+        const aw = [
+            ['Tubus (ungecufft) ID', t.toFixed(1)+' mm'],
+            ['Absaugkatheter', getSuction(t)],
+            ['Larynxmaske', getLMA(w)],
+            ['Beatmungsmaske', getMask(c)],
+            ['Guedel', getGuedel(c)],
+            ['Spatel (Laryngoskop)', getSpatel(c)],
+            ['Beatmungsbeutel', getBeutel(w)],
+            ['Ambu®-Beutel', getAmbu(w)],
+            ['Koaxiale Schläuche', w<70?'grün (Kind)':'blau (Erw.)'],
+            ['HME-Atemfilter', getHME(w)],
+            ['Spirometrieansatz', w<25?'dünner Ansatz':'dicker Ansatz'],
+        ];
+        document.getElementById('airwayData').innerHTML = aw.map(([l,v]) =>
+            `<div class="data-row"><span class="label">${l}</span><span class="value">${v}</span></div>`
+        ).join('');
+
+        // Vitals
+        const ev = getExtendedVitals(w, ageMonthsTotal);
+        const vitalsList = [
+            ['Herzfrequenz', ev.hr],
+            ['Blutdruck systolisch', ev.sys],
+            ['Blutdruck diastolisch', ev.dia],
+            ['Mittlerer arterieller Druck (MAD)', ev.mad],
+            ['Atemfrequenz', ev.af],
+            ['Atemzugvolumen (AZV)', ev.azv],
+            ['Sauerstoffverbrauch (VO₂)', ev.vo2],
+            ['Hämoglobin (Hb)', ev.hb],
+            ['Blutvolumen', ev.bv],
+            ['Diurese', ev.diurese],
+            ['Kapilläre Füllungszeit (CRT)', ev.crt],
+            ['Körpertemperatur', ev.temp],
+            ['SpO₂', ev.spo2],
+            ['etCO₂ (beatmet)', ev.etco2]
+        ];
+        document.getElementById('vitalsData').innerHTML = vitalsList.map(([l,val]) =>
+            `<div class="data-row"><span class="label">${l}</span><span class="value">${val}</span></div>`
+        ).join('');
+
+        // Hypnotika
+        let hypnoRows = '';
+        medications.filter(m => m.cat === 'hypno').forEach(med => {
+            const d = calcDose(med, w, yr);
+            hypnoRows += `<tr>
+                <td><strong>${med.name}</strong><span class="med-notes">${med.notes}</span></td>
+                <td><span class="dosierung-badge">${med.dosierung}</span></td>
+                <td><span class="dosis-cell">${d}</span></td>
+            </tr>`;
+        });
+        document.getElementById('hypnoBody').innerHTML = hypnoRows;
+
+        // Relaxanzien
+        let relaxRows = '';
+        medications.filter(m => m.cat === 'relax').forEach(med => {
+            const d = calcDose(med, w, yr);
+            relaxRows += `<tr>
+                <td><strong>${med.name}</strong><span class="med-notes">${med.notes}</span></td>
+                <td><span class="dosierung-badge">${med.dosierung}</span></td>
+                <td><span class="dosis-cell">${d}</span></td>
+            </tr>`;
+        });
+        document.getElementById('relaxBody').innerHTML = relaxRows;
+
+        // Opioide
+        let opioidRows = '';
+        medications.filter(m => m.cat === 'opioid').forEach(med => {
+            const d = calcDose(med, w, yr);
+            opioidRows += `<tr>
+                <td><strong>${med.name}</strong><span class="med-notes">${med.notes}</span></td>
+                <td><span class="dosierung-badge">${med.dosierung}</span></td>
+                <td><span class="dosis-cell">${d}</span></td>
+            </tr>`;
+        });
+        document.getElementById('opioidBody').innerHTML = opioidRows;
+
+        // Antibiotika
+        let antiRows = '';
+        medications.filter(m => m.cat === 'anti').forEach(med => {
+            const d = calcDose(med, w, yr);
+            const volumen = calcVolume(med, w);
+            antiRows += `<tr>
+                <td><strong>${med.name}</strong></td>
+                <td><span class="chip">${med.hinweis}</span></td>
+                <td><span class="dosis-cell">${d}</span></td>
+                <td style="font-size:0.78rem;color:var(--text-muted)">${volumen}</td>
+            </tr>`;
+        });
+        document.getElementById('antiBody').innerHTML = antiRows;
+
+        // Basisanalgetika
+        let ba = '';
+        basisAnalgetika.forEach(item => {
+            const d = calcBasis(item, w, ageDays);
+            if (d === null) return;
+            ba += `<tr>
+                <td><strong>${item.name}</strong></td>
+                <td><span class="chip">${item.app}</span></td>
+                <td>${item.indikation}</td>
+                <td><span class="dosis-cell">${d}</span></td>
+                <td style="font-size:0.78rem;color:var(--text-muted)">${item.maxTagesDosis}</td>
+            </tr>`;
+        });
+        document.getElementById('basisAnalgBody').innerHTML = ba;
+
+        // PONV
+        let ponvRows = '';
+        ponvMeds.forEach(p => {
+            const d = calcPonvDose(p, w, ageDays);
+            ponvRows += `<tr>
+                <td><strong>${p.name}</strong></td>
+                <td><span class="chip">${p.hinweise}</span></td>
+                <td>${p.fixDosis ? p.fixDosis + ' mg' : (p.doseMin + (p.doseMin !== p.doseMax ? '-' + p.doseMax : '') + ' mg/kg')}</td>
+                <td><span class="dosis-cell">${d}</span></td>
+            </tr>`;
+        });
+        document.getElementById('ponvBody').innerHTML = ponvRows;
+
+        // Emergency
+        let emRows = '';
+        emergencyMeds.forEach(e => {
+            const d = calcEmergencyDose(e, w);
+            emRows += `<tr>
+                <td><strong>${e.name}</strong></td>
+                <td><span class="chip">${e.hinweise}</span></td>
+                <td>${e.doseMin + (e.doseMin !== e.doseMax ? '-' + e.doseMax : '') + (e.doseMcg ? ' µg/kg' : e.doseMl ? ' ml/kg' : e.doseMinMcg ? ' µg/kg' : ' mg/kg')}</td>
+                <td><span class="dosis-cell">${d}</span></td>
+            </tr>`;
+        });
+        document.getElementById('emergencyBody').innerHTML = emRows;
+
+        // Premed
+        let pm = '', lastN = '';
+        premedMeds.forEach(p => {
+            const d = calcPremed(p, w);
+            const showName = p.name !== lastN;
+            lastN = p.name;
+            pm += `<tr>
+                <td>${showName ? `<span class="premed-group-name">${p.name}</span>` : ''}</td>
+                <td><span class="chip">${p.app}</span><span class="med-notes">${p.dosePerKg}</span></td>
+                <td><span class="dosis-cell">${d}</span></td>
+                <td>${p.zeit}</td>
+                <td style="font-size:0.78rem;color:var(--text-dim)">${p.anmerkung || ''}</td>
+            </tr>`;
+        });
+        document.getElementById('premedBody').innerHTML = pm;
+
+        // Komplikationen aktualisieren
+        renderComplications(w, ageDays);
+    }
+
+    // Komplikationen rendern
+    function renderComplications(weight = 12, ageDays = 730) {
+        const container = document.getElementById('complicationList');
+        let html = '';
+        complications.forEach(c => {
+            const content = c.content(weight, ageDays);
+            html += `
+                <div class="complication-item">
+                    <div class="complication-header" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                        <span class="arrow">▶</span>
+                        <span>${c.name}</span>
+                    </div>
+                    <div class="complication-content">
+                        ${content}
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    // Event-Listener
+    let lock = false;
+    weightSlider.addEventListener('input', () => {
+        if (lock) return; lock = true;
+        weightInput.value = weightSlider.value;
+        sliderValue.textContent = Number(weightSlider.value).toFixed(1).replace('.', ',');
+        lock = false; update();
+    });
+    weightInput.addEventListener('input', () => {
+        if (lock) return; lock = true;
+        let v = parseFloat(weightInput.value) || 12;
+        v = Math.min(70, Math.max(0.5, v));
+        weightSlider.value = v;
+        weightInput.value = v;
+        sliderValue.textContent = v.toFixed(1).replace('.', ',');
+        lock = false; update();
+    });
+    ageYears.addEventListener('input', update);
+    ageMonths.addEventListener('input', update);
+
+    // Initial
+    update();
+})();
+</script>
+
+</body>
+</html>

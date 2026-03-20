@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="de">
 <head>
     <meta charset="UTF-8">
@@ -31,756 +30,775 @@
             --body: 'Inter', sans-serif;
         }
 
-```
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
-        background: var(--bg);
-        color: var(--text);
-        font-family: var(--body);
-        min-height: 100vh;
-        padding: 24px 16px 60px;
-        background-image:
-            radial-gradient(ellipse 80% 50% at 50% -10%, rgba(14,105,161,0.06) 0%, transparent 60%),
-            radial-gradient(ellipse 40% 30% at 90% 90%, rgba(14,105,161,0.04) 0%, transparent 50%);
-    }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body);
+            min-height: 100vh;
+            padding: 24px 16px 60px;
+            background-image:
+                radial-gradient(ellipse 80% 50% at 50% -10%, rgba(14,105,161,0.06) 0%, transparent 60%),
+                radial-gradient(ellipse 40% 30% at 90% 90%, rgba(14,105,161,0.04) 0%, transparent 50%);
+        }
 
-    .shell {
-        max-width: 1300px;
-        margin: 0 auto;
-    }
+        .shell {
+            max-width: 1300px;
+            margin: 0 auto;
+        }
 
-    header {
-        display: flex;
-        align-items: center;
-        gap: 18px;
-        margin-bottom: 32px;
-        padding: 0 4px;
-        animation: fadeDown 0.5s ease both;
-    }
-    .header-icon {
-        width: 52px; height: 52px;
-        background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
-        border-radius: 14px;
-        display: flex; align-items: center; justify-content: center;
-        font-size: 24px;
-        box-shadow: 0 0 24px rgba(14,105,161,0.2);
-        flex-shrink: 0;
-    }
-    header h1 {
-        font-family: var(--display);
-        font-size: 1.6rem;
-        font-weight: 800;
-        letter-spacing: -0.02em;
-        color: var(--text);
-        line-height: 1.1;
-    }
-    header p {
-        font-size: 0.8rem;
-        color: var(--text-muted);
-        font-weight: 300;
-        margin-top: 3px;
-        letter-spacing: 0.05em;
-        text-transform: uppercase;
-    }
+        header {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            margin-bottom: 32px;
+            padding: 0 4px;
+            animation: fadeDown 0.5s ease both;
+        }
+        .header-icon {
+            width: 52px; height: 52px;
+            background: linear-gradient(135deg, #0ea5e9 0%, #0369a1 100%);
+            border-radius: 14px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 0 24px rgba(14,105,161,0.2);
+            flex-shrink: 0;
+        }
+        header h1 {
+            font-family: var(--display);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            color: var(--text);
+            line-height: 1.1;
+        }
+        header p {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-weight: 300;
+            margin-top: 3px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
 
-    .input-panel {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 20px;
-        padding: 24px 28px;
-        margin-bottom: 24px;
-        animation: fadeDown 0.5s 0.1s ease both;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.06);
-    }
-    .input-grid {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px 32px;
-        align-items: flex-end;
-        margin-bottom: 20px;
-    }
-    .input-group {
-        display: flex;
-        flex-direction: column;
-        gap: 6px;
-    }
-    .input-group label {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-    }
-    .input-row-inner {
-        display: flex;
-        align-items: center;
-        gap: 8px;
-    }
-    .input-row-inner span {
-        font-size: 0.75rem;
-        color: var(--text-muted);
-        font-weight: 500;
-    }
-    input[type=number] {
-        background: var(--surface2);
-        border: 1px solid var(--border);
-        border-radius: 10px;
-        color: var(--text);
-        font-family: var(--mono);
-        font-size: 1.1rem;
-        font-weight: 500;
-        padding: 10px 14px;
-        width: 80px;
-        transition: border-color 0.2s, box-shadow 0.2s;
-        outline: none;
-        -moz-appearance: textfield;
-    }
-    input[type=number]::-webkit-inner-spin-button,
-    input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
-    input[type=number]:focus {
-        border-color: var(--accent);
-        box-shadow: 0 0 0 3px var(--accent-glow);
-    }
-    input[type=number].wide { width: 110px; }
+        .input-panel {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 24px 28px;
+            margin-bottom: 24px;
+            animation: fadeDown 0.5s 0.1s ease both;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .input-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px 32px;
+            align-items: flex-end;
+            margin-bottom: 20px;
+        }
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .input-group label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .input-row-inner {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .input-row-inner span {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        input[type=number] {
+            background: var(--surface2);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text);
+            font-family: var(--mono);
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 10px 14px;
+            width: 80px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            outline: none;
+            -moz-appearance: textfield;
+        }
+        input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; }
+        input[type=number]:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-glow);
+        }
+        input[type=number].wide { width: 110px; }
 
-    .slider-row {
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        padding-top: 4px;
-    }
-    .slider-label {
-        font-size: 0.7rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-        white-space: nowrap;
-    }
-    input[type=range] {
-        flex: 1;
-        -webkit-appearance: none;
-        height: 4px;
-        border-radius: 4px;
-        background: var(--surface3);
-        outline: none;
-        cursor: pointer;
-    }
-    input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 20px; height: 20px;
-        border-radius: 50%;
-        background: var(--accent);
-        border: 3px solid var(--bg);
-        box-shadow: 0 0 10px rgba(14,105,161,0.35);
-        cursor: pointer;
-        transition: transform 0.15s, box-shadow 0.15s;
-    }
-    input[type=range]::-webkit-slider-thumb:hover {
-        transform: scale(1.2);
-        box-shadow: 0 0 16px rgba(14,105,161,0.55);
-    }
-    .slider-badge {
-        background: var(--accent);
-        color: #fff;
-        font-family: var(--mono);
-        font-size: 0.9rem;
-        font-weight: 500;
-        padding: 5px 14px;
-        border-radius: 8px;
-        min-width: 70px;
-        text-align: center;
-    }
+        .slider-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding-top: 4px;
+        }
+        .slider-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            white-space: nowrap;
+        }
+        input[type=range] {
+            flex: 1;
+            -webkit-appearance: none;
+            height: 4px;
+            border-radius: 4px;
+            background: var(--surface3);
+            outline: none;
+            cursor: pointer;
+        }
+        input[type=range]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 20px; height: 20px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 3px solid var(--bg);
+            box-shadow: 0 0 10px rgba(14,105,161,0.35);
+            cursor: pointer;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        input[type=range]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+            box-shadow: 0 0 16px rgba(14,105,161,0.55);
+        }
+        .slider-badge {
+            background: var(--accent);
+            color: #fff;
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 5px 14px;
+            border-radius: 8px;
+            min-width: 70px;
+            text-align: center;
+        }
 
-    .warning-badge {
-        background: var(--red-dim);
-        color: var(--red);
-        border: 1px solid rgba(248,113,113,0.3);
-        padding: 7px 14px;
-        border-radius: 8px;
-        font-size: 0.78rem;
-        font-weight: 600;
-        letter-spacing: 0.03em;
-        display: none;
-    }
-    .warning-badge.visible { display: inline-flex; align-items: center; gap: 6px; }
+        .warning-badge {
+            background: var(--red-dim);
+            color: var(--red);
+            border: 1px solid rgba(248,113,113,0.3);
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            display: none;
+        }
+        .warning-badge.visible { display: inline-flex; align-items: center; gap: 6px; }
 
-    .tab-bar {
-        display: flex;
-        gap: 4px;
-        margin-bottom: 20px;
-        background: var(--surface);
-        padding: 6px;
-        border-radius: 14px;
-        border: 1px solid var(--border);
-        flex-wrap: wrap;
-        animation: fadeDown 0.5s 0.2s ease both;
-    }
-    .tab-button {
-        background: transparent;
-        border: none;
-        color: var(--text-muted);
-        font-family: var(--body);
-        font-size: 0.8rem;
-        font-weight: 600;
-        padding: 9px 16px;
-        border-radius: 9px;
-        cursor: pointer;
-        transition: background 0.2s, color 0.2s;
-        letter-spacing: 0.02em;
-        white-space: nowrap;
-    }
-    .tab-button:hover {
-        color: var(--text);
-        background: var(--surface2);
-    }
-    .tab-button.active {
-        background: var(--accent);
-        color: #fff;
-        box-shadow: 0 2px 10px rgba(14,105,161,0.2);
-    }
+        .tab-bar {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 20px;
+            background: var(--surface);
+            padding: 6px;
+            border-radius: 14px;
+            border: 1px solid var(--border);
+            flex-wrap: wrap;
+            animation: fadeDown 0.5s 0.2s ease both;
+        }
+        .tab-button {
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-family: var(--body);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 9px 16px;
+            border-radius: 9px;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+        }
+        .tab-button:hover {
+            color: var(--text);
+            background: var(--surface2);
+        }
+        .tab-button.active {
+            background: var(--accent);
+            color: #fff;
+            box-shadow: 0 2px 10px rgba(14,105,161,0.2);
+        }
 
-    .tab-content {
-        display: none;
-        animation: fadeIn 0.3s ease both;
-    }
-    .tab-content.active { display: block; }
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease both;
+        }
+        .tab-content.active { display: block; }
 
-    .tab-header {
-        font-family: var(--display);
-        font-size: 1.05rem;
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: 18px;
-        padding-bottom: 12px;
-        border-bottom: 1px solid var(--border);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-    }
-    .tab-header::before {
-        content: '';
-        display: block;
-        width: 3px; height: 18px;
-        background: var(--accent);
-        border-radius: 2px;
-    }
+        .tab-header {
+            font-family: var(--display);
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 18px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .tab-header::before {
+            content: '';
+            display: block;
+            width: 3px; height: 18px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
 
-    .data-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 8px;
-    }
-    .data-row {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        padding: 12px 16px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 10px;
-        transition: border-color 0.2s;
-    }
-    .data-row:hover { border-color: var(--border-active); }
-    .data-row .label {
-        font-size: 0.82rem;
-        color: var(--text-muted);
-        font-weight: 500;
-    }
-    .data-row .value {
-        font-family: var(--mono);
-        font-size: 0.95rem;
-        font-weight: 500;
-        color: var(--accent);
-        background: var(--accent-glow);
-        padding: 3px 12px;
-        border-radius: 6px;
-        white-space: nowrap;
-    }
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 8px;
+        }
+        .data-row {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 12px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            transition: border-color 0.2s;
+        }
+        .data-row:hover { border-color: var(--border-active); }
+        .data-row .label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+        .data-row .value {
+            font-family: var(--mono);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 3px 12px;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
 
-    .table-wrap {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 16px;
-        overflow: hidden;
-        margin-bottom: 24px;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    }
-    .med-table {
-        width: 100%;
-        border-collapse: collapse;
-        font-size: 0.83rem;
-    }
-    .med-table thead tr {
-        background: var(--surface2);
-        border-bottom: 1px solid var(--border);
-    }
-    .med-table th {
-        text-align: left;
-        padding: 12px 16px;
-        font-size: 0.68rem;
-        font-weight: 600;
-        letter-spacing: 0.1em;
-        text-transform: uppercase;
-        color: var(--text-muted);
-    }
-    .med-table td {
-        padding: 11px 16px;
-        border-bottom: 1px solid var(--border);
-        vertical-align: top;
-        color: var(--text);
-        line-height: 1.45;
-    }
-    .med-table tbody tr:last-child td { border-bottom: none; }
-    .med-table tbody tr:hover td { background: rgba(255,255,255,0.015); }
-    .med-notes {
-        font-size: 0.72rem;
-        color: var(--text-dim);
-        display: block;
-        margin-top: 2px;
-    }
-    .dosis-cell {
-        font-family: var(--mono);
-        font-size: 0.88rem;
-        font-weight: 500;
-        color: var(--green);
-        background: var(--green-dim);
-        padding: 4px 10px;
-        border-radius: 6px;
-        white-space: nowrap;
-        display: inline-block;
-    }
+        .table-wrap {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .med-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.83rem;
+        }
+        .med-table thead tr {
+            background: var(--surface2);
+            border-bottom: 1px solid var(--border);
+        }
+        .med-table th {
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+        .med-table td {
+            padding: 11px 16px;
+            border-bottom: 1px solid var(--border);
+            vertical-align: top;
+            color: var(--text);
+            line-height: 1.45;
+        }
+        .med-table tbody tr:last-child td { border-bottom: none; }
+        .med-table tbody tr:hover td { background: rgba(255,255,255,0.015); }
+        .med-notes {
+            font-size: 0.72rem;
+            color: var(--text-dim);
+            display: block;
+            margin-top: 2px;
+        }
+        .dosis-cell {
+            font-family: var(--mono);
+            font-size: 0.88rem;
+            font-weight: 500;
+            color: var(--green);
+            background: var(--green-dim);
+            padding: 4px 10px;
+            border-radius: 6px;
+            white-space: nowrap;
+            display: inline-block;
+        }
 
-    .chip {
-        display: inline-block;
-        font-size: 0.7rem;
-        font-weight: 600;
-        padding: 2px 8px;
-        border-radius: 5px;
-        letter-spacing: 0.04em;
-        background: var(--surface3);
-        color: var(--text-muted);
-    }
+        .chip {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 5px;
+            letter-spacing: 0.04em;
+            background: var(--surface3);
+            color: var(--text-muted);
+        }
 
-    .dosierung-badge {
-        font-family: var(--mono);
-        font-size: 0.75rem;
-        color: var(--accent);
-        background: var(--accent-glow);
-        padding: 2px 8px;
-        border-radius: 4px;
-        margin-left: 8px;
-        white-space: nowrap;
-    }
+        .dosierung-badge {
+            font-family: var(--mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            background: var(--accent-glow);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-left: 8px;
+            white-space: nowrap;
+        }
 
-    /* Akkordeon für Komplikationen */
-    .complication-list {
-        display: flex;
-        flex-direction: column;
-        gap: 8px;
-    }
-    .complication-item {
-        background: var(--surface);
-        border: 1px solid var(--border);
-        border-radius: 12px;
-        overflow: hidden;
-        transition: border-color 0.2s;
-    }
-    .complication-item:hover {
-        border-color: var(--border-active);
-    }
-    .complication-header {
-        background: var(--surface2);
-        padding: 14px 18px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        font-weight: 600;
-        color: var(--text);
-        transition: background 0.2s;
-    }
-    .complication-header:hover {
-        background: var(--surface3);
-    }
-    .complication-header .arrow {
-        display: inline-block;
-        transition: transform 0.2s;
-        font-style: normal;
-        color: var(--accent);
-        font-size: 1.1rem;
-    }
-    .complication-header.open .arrow {
-        transform: rotate(90deg);
-    }
-    .complication-content {
-        display: none;
-        padding: 18px 22px;
-        background: var(--surface);
-        border-top: 1px solid var(--border);
-        color: var(--text-muted);
-        font-size: 0.9rem;
-        line-height: 1.6;
-    }
-    .complication-content.visible {
-        display: block;
-    }
+        /* Akkordeon für Komplikationen */
+        .complication-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .complication-item {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: border-color 0.2s;
+        }
+        .complication-item:hover {
+            border-color: var(--border-active);
+        }
+        .complication-header {
+            background: var(--surface2);
+            padding: 14px 18px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 600;
+            color: var(--text);
+            transition: background 0.2s;
+        }
+        .complication-header:hover {
+            background: var(--surface3);
+        }
+        .complication-header .arrow {
+            display: inline-block;
+            transition: transform 0.2s;
+            font-style: normal;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        .complication-header.open .arrow {
+            transform: rotate(90deg);
+        }
+        .complication-content {
+            display: none;
+            padding: 18px 22px;
+            background: var(--surface);
+            border-top: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        .complication-content.visible {
+            display: block;
+        }
 
-    /* Spezielles Styling für Komplikations-Inhalte */
-    .complication-section {
-        margin-bottom: 16px;
-    }
-    .complication-section-title {
-        font-family: var(--display);
-        font-size: 0.95rem;
-        font-weight: 700;
-        color: var(--text);
-        margin-bottom: 8px;
-        display: flex;
-        align-items: center;
-        gap: 6px;
-    }
-    .complication-section-title::before {
-        content: '';
-        display: inline-block;
-        width: 3px; height: 14px;
-        background: var(--accent);
-        border-radius: 2px;
-    }
-    .complication-list-bullet {
-        list-style-type: none;
-        padding-left: 0;
-    }
-    .complication-list-bullet li {
-        margin-bottom: 6px;
-        padding-left: 20px;
-        position: relative;
-    }
-    .complication-list-bullet li::before {
-        content: '•';
-        color: var(--accent);
-        font-weight: bold;
-        position: absolute;
-        left: 6px;
-    }
-    .complication-dose {
-        font-family: var(--mono);
-        font-size: 0.9rem;
-        font-weight: 500;
-        color: var(--green);
-        background: var(--green-dim);
-        padding: 2px 8px;
-        border-radius: 6px;
-        white-space: nowrap;
-        display: inline-block;
-        margin: 0 4px;
-    }
-    .complication-note {
-        background: var(--surface2);
-        border-left: 3px solid var(--amber);
-        padding: 10px 14px;
-        border-radius: 0 8px 8px 0;
-        font-size: 0.85rem;
-        color: var(--text-muted);
-        margin: 12px 0;
-    }
-    .complication-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 10px;
-        margin: 8px 0;
-    }
-    .complication-grid-item {
-        background: var(--surface2);
-        padding: 8px 12px;
-        border-radius: 8px;
-        font-size: 0.85rem;
-    }
+        /* Spezielles Styling für Komplikations-Inhalte */
+        .complication-section {
+            margin-bottom: 16px;
+        }
+        .complication-section-title {
+            font-family: var(--display);
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .complication-section-title::before {
+            content: '';
+            display: inline-block;
+            width: 3px; height: 14px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+        .complication-list-bullet {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .complication-list-bullet li {
+            margin-bottom: 6px;
+            padding-left: 20px;
+            position: relative;
+        }
+        .complication-list-bullet li::before {
+            content: '•';
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 6px;
+        }
+        .complication-dose {
+            font-family: var(--mono);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--green);
+            background: var(--green-dim);
+            padding: 2px 8px;
+            border-radius: 6px;
+            white-space: nowrap;
+            display: inline-block;
+            margin: 0 4px;
+        }
+        .complication-note {
+            background: var(--surface2);
+            border-left: 3px solid var(--amber);
+            padding: 10px 14px;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 12px 0;
+        }
+        .complication-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin: 8px 0;
+        }
+        .complication-grid-item {
+            background: var(--surface2);
+            padding: 8px 12px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+        }
 
-    @keyframes fadeDown {
-        from { opacity: 0; transform: translateY(-12px); }
-        to   { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
+        @keyframes fadeDown {
+            from { opacity: 0; transform: translateY(-12px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
 
-    @media (max-width: 680px) {
-        body { padding: 12px 10px 80px; }
-        header { gap: 12px; margin-bottom: 20px; }
-        header h1 { font-size: 1.1rem; }
-        header p { font-size: 0.75rem; }
-        .input-panel { padding: 16px 14px; }
-        .input-grid { gap: 12px 16px; }
-        .tab-bar { padding: 5px; gap: 3px; }
-        .tab-button { font-size: 0.72rem; padding: 6px 9px; }
-        .tab-header { font-size: 0.95rem; }
+        /* Blood pressure grouped row */
+        .bp-group { flex-wrap: wrap; align-items: center; gap: 8px; }
+        .bp-values { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+        .bp-item { display: flex; flex-direction: column; align-items: center; gap: 1px; }
+        .bp-sub { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+        .bp-sep { color: var(--text-muted); font-size: 0.9rem; padding-bottom: 12px; }
+        .bp-item .value { font-family: var(--mono); font-size: 0.85rem; font-weight: 500; color: var(--accent); background: var(--accent-glow); padding: 2px 8px; border-radius: 6px; white-space: nowrap; }
 
-        /* Tables: make scrollable horizontally */
-        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .med-table { font-size: 0.74rem; min-width: 480px; }
-        .med-table th, .med-table td { padding: 8px 10px; }
-        .dosis-cell { font-size: 0.78rem; white-space: normal; }
+        /* Fluid management table */
+        .fluid-label { font-size: 0.82rem; color: var(--text); }
+        .fluid-solution { font-size: 0.78rem; color: var(--text-muted); font-style: italic; }
+        .fluid-dose { text-align: right; white-space: nowrap; }
+        tr.fluid-highlight td { background: rgba(14,105,161,0.04); }
 
-        /* Data rows: stack label and value */
-        .data-grid { grid-template-columns: 1fr; gap: 6px; }
-        .data-row { flex-direction: row; flex-wrap: wrap; }
-        .data-row .label { font-size: 0.78rem; flex: 1 1 55%; }
-        .data-row .value { font-size: 0.85rem; flex: 0 0 auto; max-width: 100%; white-space: normal; }
+        @media (max-width: 680px) {
+            body { padding: 12px 10px 80px; }
+            header { gap: 12px; margin-bottom: 20px; }
+            header h1 { font-size: 1.1rem; }
+            header p { font-size: 0.75rem; }
+            .input-panel { padding: 16px 14px; }
+            .input-grid { gap: 12px 16px; }
+            .tab-bar { padding: 5px; gap: 3px; }
+            .tab-button { font-size: 0.72rem; padding: 6px 9px; }
+            .tab-header { font-size: 0.95rem; }
 
-        /* Complications */
-        .complication-header { padding: 11px 12px; font-size: 0.85rem; }
-        .complication-content { padding: 12px 12px; }
-        .complication-section-title { font-size: 0.72rem; }
-        .complication-list-bullet li { font-size: 0.8rem; }
-        .complication-dose { font-size: 0.78rem; white-space: normal; word-break: break-word; }
-        .complication-note { font-size: 0.75rem; }
+            /* Tables: make scrollable horizontally */
+            .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .med-table { font-size: 0.74rem; min-width: 480px; }
+            .med-table th, .med-table td { padding: 8px 10px; }
+            .dosis-cell { font-size: 0.78rem; white-space: normal; }
 
-        /* Prevent any overflow */
-        .shell, .tab-content, .input-panel { max-width: 100%; overflow-x: hidden; }
-        .dosis-cell, .dosierung-badge, .chip { white-space: normal; word-break: break-word; }
-    }
+            /* Data rows: stack label and value */
+            .data-grid { grid-template-columns: 1fr; gap: 6px; }
+            .data-row { flex-direction: row; flex-wrap: wrap; }
+            .data-row .label { font-size: 0.78rem; flex: 1 1 55%; }
+            .data-row .value { font-size: 0.85rem; flex: 0 0 auto; max-width: 100%; white-space: normal; }
 
-    /* iPhone landscape */
-    @media (max-width: 900px) and (orientation: landscape) {
-        body { padding: 10px 16px 40px; }
-        .tab-bar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
-        .tab-button { flex-shrink: 0; font-size: 0.75rem; padding: 7px 12px; }
-        .data-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
-        .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-        .med-table { font-size: 0.78rem; }
-    }
-</style>
-```
+            /* Complications */
+            .complication-header { padding: 11px 12px; font-size: 0.85rem; }
+            .complication-content { padding: 12px 12px; }
+            .complication-section-title { font-size: 0.72rem; }
+            .complication-list-bullet li { font-size: 0.8rem; }
+            .complication-dose { font-size: 0.78rem; white-space: normal; word-break: break-word; }
+            .complication-note { font-size: 0.75rem; }
 
+            /* Prevent any overflow */
+            .shell, .tab-content, .input-panel { max-width: 100%; overflow-x: hidden; }
+            .dosis-cell, .dosierung-badge, .chip { white-space: normal; word-break: break-word; }
+        }
+
+        /* iPhone landscape */
+        @media (max-width: 900px) and (orientation: landscape) {
+            body { padding: 10px 16px 40px; }
+            .tab-bar { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+            .tab-button { flex-shrink: 0; font-size: 0.75rem; padding: 7px 12px; }
+            .data-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); }
+            .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .med-table { font-size: 0.78rem; }
+        }
+    </style>
 </head>
 <body>
 <div class="shell">
 
-```
-<header>
-    <div class="header-icon">🩺</div>
-    <div>
-        <h1>Pädiatrie · Anästhesie</h1>
-        <p>Kinderanästhesie – Dosierhilfe</p>
-    </div>
-</header>
-
-<div class="input-panel">
-    <div class="input-grid">
-        <div class="input-group">
-            <label>Alter</label>
-            <div class="input-row-inner">
-                <input type="number" id="ageYears" min="0" max="20" value="2" step="1">
-                <span>Jahre</span>
-                <input type="number" id="ageMonths" min="0" max="11" value="0" step="1">
-                <span>Monate</span>
-            </div>
+    <header>
+        <div class="header-icon">🩺</div>
+        <div>
+            <h1>Pädiatrie · Anästhesie</h1>
+            <p>Kinderanästhesie – Dosierhilfe</p>
         </div>
-        <div class="input-group">
-            <label>Gewicht</label>
-            <div class="input-row-inner">
-                <input type="number" class="wide" id="weightInput" step="0.1" min="0.5" max="70" value="12">
-                <span>kg</span>
+    </header>
+
+    <div class="input-panel">
+        <div class="input-grid">
+            <div class="input-group">
+                <label>Alter</label>
+                <div class="input-row-inner">
+                    <input type="number" id="ageYears" min="0" max="20" value="2" step="1">
+                    <span>Jahre</span>
+                    <input type="number" id="ageMonths" min="0" max="11" value="0" step="1">
+                    <span>Monate</span>
+                </div>
             </div>
+            <div class="input-group">
+                <label>Gewicht</label>
+                <div class="input-row-inner">
+                    <input type="number" class="wide" id="weightInput" step="0.1" min="0.5" max="70" value="12">
+                    <span>kg</span>
+                </div>
+            </div>
+            <div id="warningBadge" class="warning-badge"></div>
         </div>
-        <div id="warningBadge" class="warning-badge"></div>
-    </div>
-    <div class="slider-row">
-        <span class="slider-label">Schnellwahl Gewicht</span>
-        <input type="range" id="weightSlider" min="0.5" max="70" step="0.1" value="12">
-        <span id="sliderValue" class="slider-badge">12,0</span>
-    </div>
-</div>
-
-<!-- Tab Bar (10 Tabs) -->
-<div class="tab-bar">
-    <button class="tab-button active" data-tab="vitals">❤️ Vitalparameter</button>
-    <button class="tab-button" data-tab="airway">🔧 Airway</button>
-    <button class="tab-button" data-tab="hypno">💉 Hypnotika</button>
-    <button class="tab-button" data-tab="relax">💪 Relaxanzien</button>
-    <button class="tab-button" data-tab="analg">💊 Analgetika</button>
-    <button class="tab-button" data-tab="anti">🦠 Antibiotika</button>
-    <button class="tab-button" data-tab="ponv">🤢 PONV</button>
-    <button class="tab-button" data-tab="emergency">🚨 Notfall</button>
-    <button class="tab-button" data-tab="premed">📋 Prämedikation</button>
-    <button class="tab-button" data-tab="complications">⚠️ Komplikationen</button>
-</div>
-
-<!-- Vitals Tab -->
-<div id="vitalsTab" class="tab-content active">
-    <div class="tab-header">Vitalparameter · Richtwerte</div>
-    <div class="data-grid" id="vitalsData"></div>
-</div>
-
-<!-- Airway Tab -->
-<div id="airwayTab" class="tab-content">
-    <div class="tab-header">Airway &amp; Equipment</div>
-    <div class="data-grid" id="airwayData"></div>
-</div>
-
-<!-- Hypno Tab -->
-<div id="hypnoTab" class="tab-content">
-    <div class="tab-header">Hypnotika &amp; Benzodiazepinantagonist</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
-            <tbody id="hypnoBody"></tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Relax Tab -->
-<div id="relaxTab" class="tab-content">
-    <div class="tab-header">Muskelrelaxantien &amp; Antagonisten</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
-            <tbody id="relaxBody"></tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Analg Tab -->
-<div id="analgTab" class="tab-content">
-    <div class="tab-header">Opioidanalgetika & Adjuvanzien</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
-            <tbody id="opioidBody"></tbody>
-        </table>
+        <div class="slider-row">
+            <span class="slider-label">Schnellwahl Gewicht</span>
+            <input type="range" id="weightSlider" min="0.5" max="70" step="0.1" value="12">
+            <span id="sliderValue" class="slider-badge">12,0</span>
+        </div>
     </div>
 
-    <div class="tab-header" style="margin-top:25px;">Basisanalgetika</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead>
-                <tr>
-                    <th>Wirkstoff</th>
-                    <th>Applikation</th>
-                    <th>Indikation</th>
-                    <th>Berechnete Dosis</th>
-                    <th>Max. Tagesdosis</th>
-                </tr>
-            </thead>
-            <tbody id="basisAnalgBody"></tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Antibiotika Tab -->
-<div id="antiTab" class="tab-content">
-    <div class="tab-header">Antibiotika</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead>
-                <tr>
-                    <th>Antibiotikum</th>
-                    <th>Dosierung / Hinweise</th>
-                    <th>Berechnete Dosis</th>
-                    <th>Volumen (ca.)</th>
-                </tr>
-            </thead>
-            <tbody id="antiBody"></tbody>
-        </table>
-    </div>
-</div>
-
-<!-- PONV Tab (mit Dexamethason an erster Stelle) -->
-<div id="ponvTab" class="tab-content">
-    <div class="tab-header">PONV Prophylaxe & Therapie</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead>
-                <tr>
-                    <th>Medikament</th>
-                    <th>Applikation / Hinweise</th>
-                    <th>Dosierung</th>
-                    <th>Berechnete Dosis</th>
-                </tr>
-            </thead>
-            <tbody id="ponvBody"></tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Emergency Tab -->
-<div id="emergencyTab" class="tab-content">
-    <div class="tab-header">Notfallmedikamente</div>
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead>
-                <tr>
-                    <th>Medikament</th>
-                    <th>Applikation / Verdünnung</th>
-                    <th>Dosierung</th>
-                    <th>Berechnete Dosis</th>
-                </tr>
-            </thead>
-            <tbody id="emergencyBody"></tbody>
-        </table>
-    </div>
-</div>
-
-<!-- Premed Tab -->
-<div id="premedTab" class="tab-content">
-    <div class="tab-header">Prämedikation</div>
-
-    <button class="info-toggle" id="toggleInfoIcon">
-        <i class="arrow">▶</i> Generelle Anmerkungen
-    </button>
-    <div id="hiddenInfoBox" class="info-box" style="display:none; background: rgba(251,191,36,0.05); border: 1px solid rgba(251,191,36,0.15); border-radius: 14px; padding: 20px 24px; margin-bottom: 24px;">
-        <strong>Keine Prämedikation erhalten</strong>
-        <ul style="padding-left:16px; color:var(--text-muted);">
-            <li>Säuglinge unter 6 Monaten</li>
-            <li>Cerebral schwerstbehinderte Patienten</li>
-            <li>Kritisch kranke / kardiorespiratorisch instabile Patienten</li>
-            <li>Patienten mit schwersten Atemwegsobstruktionen</li>
-            <li>Patienten vom Notfall nach Fentanylgabe nasal oder Nalbuphingabe i.v.</li>
-        </ul>
-        <strong>Keine rektale Applikation bei</strong>
-        <ul style="padding-left:16px; color:var(--text-muted);">
-            <li>Thrombopenie / Leukopenie · Chemotherapie</li>
-            <li>Rektumoperationen · Affektionen des Dickdarms · Koloskopie</li>
-        </ul>
-        <strong>Obligate SpO₂-Überwachung bei</strong>
-        <ul style="padding-left:16px; color:var(--text-muted);">
-            <li>OSAS · Ketamin-Prämedikation</li>
-            <li>Sehr hoher Midazolamdosis (0.7–1.0 mg/kg)</li>
-            <li>Midazolamgabe trotz Fentanyl nasal oder Nalbuphingabe auf Notfall</li>
-            <li>Anatomischen Atemwegsmissbildungen</li>
-            <li>Cerebralparese / Vigilanzreduktion bei neurologischen Grunderkrankungen</li>
-        </ul>
-        <div style="margin-top:14px; padding:10px 14px; background: rgba(251,191,36,0.08); border-left:3px solid var(--amber); border-radius:0 8px 8px 0; color:var(--text);">→ Sättigungsmonitoring, O₂-Gabe und Info an Saaloberarzt bei SpO₂ &lt; 94 % bei Prämedikation für Station verordnen!</div>
+    <!-- Tab Bar (10 Tabs) -->
+    <div class="tab-bar">
+        <button class="tab-button active" data-tab="vitals">❤️ Vitalparameter</button>
+        <button class="tab-button" data-tab="airway">🔧 Airway</button>
+        <button class="tab-button" data-tab="hypno">💉 Hypnotika</button>
+        <button class="tab-button" data-tab="relax">💪 Relaxanzien</button>
+        <button class="tab-button" data-tab="analg">💊 Analgetika</button>
+        <button class="tab-button" data-tab="anti">🦠 Antibiotika</button>
+        <button class="tab-button" data-tab="ponv">🤢 PONV</button>
+        <button class="tab-button" data-tab="emergency">🚨 Notfall</button>
+        <button class="tab-button" data-tab="premed">📋 Prämedikation</button>
+        <button class="tab-button" data-tab="complications">⚠️ Komplikationen</button>
+        <button class="tab-button" data-tab="fluids">💧 Flüssigkeit</button>
+        <button class="tab-button" data-tab="la">💉 Lokalanästhetika</button>
     </div>
 
-    <div class="table-wrap">
-        <table class="med-table">
-            <thead>
-                <tr>
-                    <th>Medikament</th>
-                    <th>Applikation</th>
-                    <th>Berechnete Dosis</th>
-                    <th>Zeitpunkt</th>
-                    <th>Anmerkungen</th>
-                </tr>
-            </thead>
-            <tbody id="premedBody"></tbody>
-        </table>
+    <!-- Vitals Tab -->
+    <div id="vitalsTab" class="tab-content active">
+        <div class="tab-header">Vitalparameter · Richtwerte</div>
+        <div class="data-grid" id="vitalsData"></div>
     </div>
-</div>
 
-<!-- Complications Tab -->
-<div id="complicationsTab" class="tab-content">
-    <div class="tab-header">⚠️ Komplikationen</div>
-    <div class="complication-list" id="complicationList"></div>
-</div>
-```
+    <!-- Airway Tab -->
+    <div id="airwayTab" class="tab-content">
+        <div class="tab-header">Airway &amp; Equipment</div>
+        <div class="data-grid" id="airwayData"></div>
+    </div>
 
-</div>
+    <!-- Hypno Tab -->
+    <div id="hypnoTab" class="tab-content">
+        <div class="tab-header">Hypnotika &amp; Benzodiazepinantagonist</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
+                <tbody id="hypnoBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Relax Tab -->
+    <div id="relaxTab" class="tab-content">
+        <div class="tab-header">Muskelrelaxantien &amp; Antagonisten</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
+                <tbody id="relaxBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Analg Tab -->
+    <div id="analgTab" class="tab-content">
+        <div class="tab-header">Opioidanalgetika & Adjuvanzien</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead><tr><th>Wirkstoff</th><th>Dosierung</th><th>Berechnete Dosis</th></tr></thead>
+                <tbody id="opioidBody"></tbody>
+            </table>
+        </div>
+
+        <div class="tab-header" style="margin-top:25px;">Basisanalgetika</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead>
+                    <tr>
+                        <th>Wirkstoff</th>
+                        <th>Applikation</th>
+                        <th>Indikation</th>
+                        <th>Berechnete Dosis</th>
+                        <th>Max. Tagesdosis</th>
+                    </tr>
+                </thead>
+                <tbody id="basisAnalgBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Antibiotika Tab -->
+    <div id="antiTab" class="tab-content">
+        <div class="tab-header">Antibiotika</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead>
+                    <tr>
+                        <th>Antibiotikum</th>
+                        <th>Dosierung / Hinweise</th>
+                        <th>Berechnete Dosis</th>
+                        <th>Volumen (ca.)</th>
+                    </tr>
+                </thead>
+                <tbody id="antiBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- PONV Tab (mit Dexamethason an erster Stelle) -->
+    <div id="ponvTab" class="tab-content">
+        <div class="tab-header">PONV Prophylaxe & Therapie</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead>
+                    <tr>
+                        <th>Medikament</th>
+                        <th>Applikation / Hinweise</th>
+                        <th>Dosierung</th>
+                        <th>Berechnete Dosis</th>
+                    </tr>
+                </thead>
+                <tbody id="ponvBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Emergency Tab -->
+    <div id="emergencyTab" class="tab-content">
+        <div class="tab-header">Notfallmedikamente</div>
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead>
+                    <tr>
+                        <th>Medikament</th>
+                        <th>Applikation / Verdünnung</th>
+                        <th>Dosierung</th>
+                        <th>Berechnete Dosis</th>
+                    </tr>
+                </thead>
+                <tbody id="emergencyBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Premed Tab -->
+    <div id="premedTab" class="tab-content">
+        <div class="tab-header">Prämedikation</div>
+
+        <button class="info-toggle" id="toggleInfoIcon">
+            <i class="arrow">▶</i> Generelle Anmerkungen
+        </button>
+        <div id="hiddenInfoBox" class="info-box" style="display:none; background: rgba(251,191,36,0.05); border: 1px solid rgba(251,191,36,0.15); border-radius: 14px; padding: 20px 24px; margin-bottom: 24px;">
+            <strong>Keine Prämedikation erhalten</strong>
+            <ul style="padding-left:16px; color:var(--text-muted);">
+                <li>Säuglinge unter 6 Monaten</li>
+                <li>Cerebral schwerstbehinderte Patienten</li>
+                <li>Kritisch kranke / kardiorespiratorisch instabile Patienten</li>
+                <li>Patienten mit schwersten Atemwegsobstruktionen</li>
+                <li>Patienten vom Notfall nach Fentanylgabe nasal oder Nalbuphingabe i.v.</li>
+            </ul>
+            <strong>Keine rektale Applikation bei</strong>
+            <ul style="padding-left:16px; color:var(--text-muted);">
+                <li>Thrombopenie / Leukopenie · Chemotherapie</li>
+                <li>Rektumoperationen · Affektionen des Dickdarms · Koloskopie</li>
+            </ul>
+            <strong>Obligate SpO₂-Überwachung bei</strong>
+            <ul style="padding-left:16px; color:var(--text-muted);">
+                <li>OSAS · Ketamin-Prämedikation</li>
+                <li>Sehr hoher Midazolamdosis (0.7–1.0 mg/kg)</li>
+                <li>Midazolamgabe trotz Fentanyl nasal oder Nalbuphingabe auf Notfall</li>
+                <li>Anatomischen Atemwegsmissbildungen</li>
+                <li>Cerebralparese / Vigilanzreduktion bei neurologischen Grunderkrankungen</li>
+            </ul>
+            <div style="margin-top:14px; padding:10px 14px; background: rgba(251,191,36,0.08); border-left:3px solid var(--amber); border-radius:0 8px 8px 0; color:var(--text);">→ Sättigungsmonitoring, O₂-Gabe und Info an Saaloberarzt bei SpO₂ &lt; 94 % bei Prämedikation für Station verordnen!</div>
+        </div>
+
+        <div class="table-wrap">
+            <table class="med-table">
+                <thead>
+                    <tr>
+                        <th>Medikament</th>
+                        <th>Applikation</th>
+                        <th>Berechnete Dosis</th>
+                        <th>Zeitpunkt</th>
+                        <th>Anmerkungen</th>
+                    </tr>
+                </thead>
+                <tbody id="premedBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Complications Tab -->
+    <div id="complicationsTab" class="tab-content">
+        <div class="tab-header">⚠️ Komplikationen</div>
+        <div class="complication-list" id="complicationList"></div>
+    </div>
+
+    <div id="fluidsTab" class="tab-content">
+        <div class="tab-header">💧 Perioperatives Flüssigkeitsmanagement</div>
+        <div id="fluidsContent"></div>
+    </div>
+
+    <div id="laTab" class="tab-content">
+        <div class="tab-header">💉 Lokalanästhetika</div>
+        <div id="laContent"></div>
+    </div>
 
 <script>
 (function() {
@@ -1619,11 +1637,23 @@
             const parts = range.split('–').map(s => parseInt(s.trim()));
             return { min: parts[0], max: parts[1] };
         };
-        const sysRange = parseRange(base.sys);
-        const diaRange = parseRange(base.dia);
-        const madMin = Math.round((sysRange.min + 2*diaRange.min)/3);
-        const madMax = Math.round((sysRange.max + 2*diaRange.max)/3);
-        const mad = madMin === madMax ? madMin : madMin + '–' + madMax;
+        // MAP-Minimalwert altersbasiert (klinische Grenzwerte)
+        let madMin;
+        let madNote = '';
+        if (ageMonthsTotal < 1) {
+            madMin = 30;
+            madNote = ' (FG: MAP = PMA*, mind. 30)';
+        } else if (ageMonthsTotal < 3) {
+            madMin = 40;  // Neugeborene
+        } else if (ageMonthsTotal < 12) {
+            madMin = 45;  // Säuglinge
+        } else if (ageMonthsTotal < 72) {
+            madMin = 50;  // 1–6 Jahre
+        } else {
+            madMin = 55;  // >6 Jahre
+        }
+        const madMax = madMin < 55 ? madMin + 10 : 60;
+        const mad = 'min. ' + madMin + (madMin === 55 ? '–60' : '') + madNote;
 
         let hbRange;
         if (ageMonthsTotal < 1) hbRange = '14–20';
@@ -1814,11 +1844,10 @@
 
         // Vitals
         const ev = getExtendedVitals(w, ageMonthsTotal);
-        const vitalsList = [
+        const vitalsListPre = [
             ['Herzfrequenz', ev.hr],
-            ['Blutdruck systolisch', ev.sys],
-            ['Blutdruck diastolisch', ev.dia],
-            ['Mittlerer arterieller Druck (MAD)', ev.mad],
+        ];
+        const vitalsListPost = [
             ['Atemfrequenz', ev.af],
             ['Atemzugvolumen (AZV)', ev.azv],
             ['Sauerstoffverbrauch (VO₂)', ev.vo2],
@@ -1830,9 +1859,26 @@
             ['SpO₂', ev.spo2],
             ['etCO₂ (beatmet)', ev.etco2]
         ];
-        document.getElementById('vitalsData').innerHTML = vitalsList.map(([l,val]) =>
-            `<div class="data-row"><span class="label">${l}</span><span class="value">${val}</span></div>`
-        ).join('');
+        const bpBlock = `
+            <div class="data-row bp-group">
+                <span class="label">Blutdruck</span>
+                <span class="bp-values">
+                    <span class="bp-item"><span class="bp-sub">sys</span><span class="value">${ev.sys}</span></span>
+                    <span class="bp-sep">/</span>
+                    <span class="bp-item"><span class="bp-sub">dia</span><span class="value">${ev.dia}</span></span>
+                    <span class="bp-sep">·</span>
+                    <span class="bp-item"><span class="bp-sub">MAD</span><span class="value">${ev.mad}</span></span>
+                </span>
+            </div>`;
+        document.getElementById('vitalsData').innerHTML =
+            vitalsListPre.map(([l,val]) =>
+                `<div class="data-row"><span class="label">${l}</span><span class="value">${val}</span></div>`
+            ).join('') +
+            bpBlock +
+            vitalsListPost.map(([l,val]) =>
+                `<div class="data-row"><span class="label">${l}</span><span class="value">${val}</span></div>`
+            ).join('') +
+            (ageMonthsTotal < 1 ? '<div style="margin-top:10px;font-size:0.74rem;color:var(--text-muted);padding:0 4px;">* PMA: postmenstrual age (MAP-Zielwert in mmHg = Wochen PMA, mindestens 30 mmHg)</div>' : '');
 
         // Hypnotika
         let hypnoRows = '';
@@ -1943,6 +1989,10 @@
 
         // Komplikationen aktualisieren
         renderComplications(w, ageDays);
+        // Flüssigkeitsmanagement aktualisieren
+        renderFluids(w);
+        // Lokalanästhetika aktualisieren
+        renderLA(w, yr);
     }
 
     // Komplikationen rendern
@@ -1964,6 +2014,380 @@
             `;
         });
         container.innerHTML = html;
+    }
+
+    // Flüssigkeitsmanagement rendern
+    function renderFluids(weight = 12) {
+        const container = document.getElementById('fluidsContent');
+        if (!container) return;
+        const w = weight;
+
+        // 1. Stunde
+        const h1_herzgesund     = Math.min(20 * w, 500).toFixed(0);
+        const h1_herzkrank      = Math.min(10 * w, 500).toFixed(0);
+        const h1_infusion       = Math.min(10 * w, 500).toFixed(0);
+
+        // ab 2. Stunde – kleines Trauma
+        const h2_klein_low      = (10 * w).toFixed(0);
+        const h2_klein_high     = (5 * w).toFixed(0);
+
+        // ab 2. Stunde – mittleres/grosses Trauma
+        const h2_gross_erh_lo   = (4 * w).toFixed(0);
+        const h2_gross_erh_mid  = (2 * w).toFixed(0);
+        const h2_gross_erh_hi   = (1 * w).toFixed(0);
+        const h2_korr_lo        = (5 * w).toFixed(0);
+        const h2_korr_mid       = (10 * w).toFixed(0);
+        const h2_korr_hi        = (20 * w).toFixed(0);
+
+        // nach 2h ohne Blutverlust
+        const h2_no_blood_lo    = (4 * w).toFixed(0);
+        const h2_no_blood_mid   = (2 * w).toFixed(0);
+        const h2_no_blood_hi    = (1 * w).toFixed(0);
+
+        // Bolus
+        const bolus_hz          = (20 * w).toFixed(0);
+        const bolus_hk          = (10 * w).toFixed(0);
+
+        // Postoperativ 4-2-1
+        const post_421_lo       = (4 * w).toFixed(0);
+        const post_421_mid      = (2 * w).toFixed(0);
+        const post_421_hi       = (1 * w).toFixed(0);
+        const post_day_120      = (120 * w).toFixed(0);
+
+        function row(label, solution, dose, highlight) {
+            return `<tr${highlight ? ' class="fluid-highlight"' : ''}>
+                <td class="fluid-label">${label}</td>
+                <td class="fluid-solution">${solution}</td>
+                <td class="fluid-dose"><span class="dosis-cell">${dose}</span></td>
+            </tr>`;
+        }
+
+        container.innerHTML = `
+            <div class="complication-note" style="margin-bottom:18px;">
+                <strong>⚠ Grundsätze:</strong>
+                Alle Infusionen immer über den Infusomaten! · Eine leichte Überwässerung ist besser als eine Hypovolämie. · Regelmässige Kontrolle von Vitalparametern, BGA, Elektrolyten &amp; BZ bei grossen Eingriffen und je kleiner/schwerer krank der Patient ist.
+            </div>
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>1. Stunde – Nüchterndefizit &amp; Erhaltungsbedarf</span>
+                </div>
+                <div class="complication-content visible">
+                    <div class="table-wrap" style="margin-bottom:0;">
+                        <table class="med-table">
+                            <thead><tr>
+                                <th>Patient</th><th>Lösung</th><th>Dosis → ${w} kg</th>
+                            </tr></thead>
+                            <tbody>
+                                ${row('Herzgesunde Patienten', 'Ringeracetatglucose 1%', h1_herzgesund + ' ml/h', true)}
+                                ${row('Herzkranke Patienten', 'Ringeracetatglucose 1%', h1_herzkrank + ' ml/h')}
+                                ${row('Mit präop. Infusionstherapie', 'Ringeracetatglucose 1%', h1_infusion + ' ml/h')}
+                                <tr><td class="fluid-label" style="color:var(--text-muted);font-size:0.75rem;" colspan="2">Maximale Menge</td><td class="fluid-dose"><span class="dosis-cell">500 ml/h</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>Ab 2. Stunde – Erhaltungs- &amp; Korrekturbedarf</span>
+                </div>
+                <div class="complication-content visible">
+                    <div class="complication-section">
+                        <div class="complication-section-title">Kleines Gewebetrauma / kleine Wundfläche</div>
+                        <div class="table-wrap" style="margin-bottom:0;">
+                            <table class="med-table">
+                                <thead><tr><th>Patient</th><th>Lösung</th><th>Dosis → ${w} kg</th></tr></thead>
+                                <tbody>
+                                    ${row('&lt; 50 kg KG', 'Ringeracetatglucose 1%', h2_klein_low + ' ml/h', true)}
+                                    ${row('&gt; 50 kg KG', 'Ringeracetatglucose 1%', h2_klein_high + ' ml/h')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="complication-section">
+                        <div class="complication-section-title">Mittleres bis grosses Gewebetrauma / Wundfläche</div>
+                        <div class="table-wrap" style="margin-bottom:0;">
+                            <table class="med-table">
+                                <thead><tr><th>Bedarf</th><th>Lösung</th><th>Dosis → ${w} kg</th></tr></thead>
+                                <tbody>
+                                    ${row('Erhaltungsbedarf (4–2–1)', 'Ringeracetatglucose 1%', h2_gross_erh_lo + ' – ' + h2_gross_erh_mid + ' – ' + h2_gross_erh_hi + ' ml/h', true)}
+                                    ${row('Korrekturbedarf', 'Ringeracetat', '(' + h2_korr_lo + ') – ' + h2_korr_mid + ' – (' + h2_korr_hi + ') ml/h')}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="complication-section">
+                        <div class="complication-section-title">Ohne Blutverlust (z.B. Zahnsanierung) nach 2 h</div>
+                        <div class="table-wrap" style="margin-bottom:0;">
+                            <table class="med-table">
+                                <thead><tr><th>Patient</th><th>Lösung</th><th>Dosis → ${w} kg</th></tr></thead>
+                                <tbody>
+                                    ${row('Alle Patienten (4–2–1)', 'Ringeracetatglucose 1%', h2_no_blood_lo + ' – ' + h2_no_blood_mid + ' – ' + h2_no_blood_hi + ' ml/h', true)}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>Ersatz ausserordentlicher Defizite (Bolus)</span>
+                </div>
+                <div class="complication-content visible">
+                    <div class="table-wrap" style="margin-bottom:0;">
+                        <table class="med-table">
+                            <thead><tr><th>Patient</th><th>Lösung</th><th>Dosis → ${w} kg</th></tr></thead>
+                            <tbody>
+                                ${row('Herzgesunde Patienten', 'Ringeracetat', bolus_hz + ' ml Bolus', true)}
+                                ${row('Herzkranke Patienten', 'Ringeracetat', bolus_hk + ' ml Bolus')}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>Postoperativer Erhaltungsbedarf</span>
+                </div>
+                <div class="complication-content visible">
+                    <div class="table-wrap" style="margin-bottom:0;">
+                        <table class="med-table">
+                            <thead><tr><th>Patient</th><th>Lösung</th><th>Dosis → ${w} kg</th></tr></thead>
+                            <tbody>
+                                ${row('NG 8. Tag – 1 Jahr', 'Ringeracetatglucose 1%', '120 ml/kg/d → ' + post_day_120 + ' ml/d')}
+                                ${row('Kinder &gt; 1 Jahr (4–2–1)', 'Ringeracetatglucose 1%', post_421_lo + ' – ' + post_421_mid + ' – ' + post_421_hi + ' ml/h', true)}
+                                <tr><td class="fluid-label" style="color:var(--text-muted);font-size:0.75rem;" colspan="2">Max. Menge / 4-2-1 / 1800 ml/m²/d</td><td class="fluid-dose"><span class="dosis-cell">2500 ml/d</span></td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>Flüssigkeitstherapie bei Niereninsuffizienz</span>
+                </div>
+                <div class="complication-content">
+                    <div class="complication-section">
+                        <ul class="complication-list-bullet">
+                            <li><strong>Normurisches Nierenversagen:</strong> Standardprotokoll, engmaschige Kontrolle</li>
+                            <li><strong>Oligurisches Nierenversagen:</strong> restriktiv, Bilanzierung, Furosemid-Versuch</li>
+                            <li><strong>Polyurisches Nierenversagen:</strong> erhöhter Ersatzbedarf, Elektrolyte engmaschig</li>
+                            <li><strong>Bei hypovolämie-bedingter Hypotonie:</strong> Ringeracetat-Bolus wie oben</li>
+                        </ul>
+                    </div>
+                    <div class="complication-note">
+                        <strong>⚠ Kalium &gt; 5,0 mmol/l:</strong> kaliumfreie Ringer-Lösung verwenden!<br>
+                        <strong>* TF:</strong> Bei allen Pat. mit Niereninsuffizienz muss bei der Prämedikation die Totalflüssigkeit erfragt und im Prämedikationsbericht festgehalten werden.
+                    </div>
+                </div>
+            </div>
+        `;
+    }
+
+    // Lokalanästhetika rendern
+    function renderLA(weight, ageYears) {
+        const container = document.getElementById('laContent');
+        if (!container) return;
+        const w = weight;
+
+        // Articain 4%
+        const articain_ml = ageYears < 12
+            ? (0.125 * w).toFixed(2) + ' ml'
+            : (0.175 * w).toFixed(2) + ' ml';
+        const articain_mg = ageYears < 12
+            ? (5.0 * w).toFixed(1) + ' mg'
+            : (7.0 * w).toFixed(1) + ' mg';
+        const articain_note = ageYears < 1
+            ? '< 1 J: nicht empfohlen'
+            : ageYears < 12
+            ? '< 12 J: 5 mg/kg'
+            : '≥ 12 J: 7 mg/kg';
+
+        // Bupivacain
+        const bupi05_ml  = (0.5  * w).toFixed(2) + ' ml';
+        const bupi05_mg  = (2.5  * w).toFixed(1) + ' mg';
+        const bupi025_ml = (1.0  * w).toFixed(2) + ' ml';
+        const bupi025_mg = (2.5  * w).toFixed(1) + ' mg';
+        const bupi0125_ml= (2.0  * w).toFixed(2) + ' ml';
+        const bupi0125_mg= (2.5  * w).toFixed(1) + ' mg';
+
+        // Bupivacain Perfusor epidural
+        const ageYrsRound = Math.max(ageYears, 0);
+        const perf_lumbal_ml  = Math.min(ageYrsRound * 1.0, 10).toFixed(1) + ' ml/h (max 10 ml/h)';
+        const perf_thorak_ml  = Math.min(ageYrsRound * 0.5, 8).toFixed(1) + ' ml/h (max 8 ml/h)';
+        const perf_mg_lo = ageYears < 1
+            ? (0.2 * w).toFixed(2) + ' mg/h'
+            : (0.4 * w).toFixed(2) + ' mg/h';
+        const perf_mg_hi = ageYears < 1
+            ? (0.4 * w).toFixed(2) + ' mg/h'
+            : (0.7 * w).toFixed(2) + ' mg/h';
+
+        // WRI unter Lidocain-Perfusor
+        const wri_bupi025 = (0.25  * w).toFixed(2) + ' ml';
+        const wri_bupi05  = (0.125 * w).toFixed(2) + ' ml';
+
+        // Lidocain 1%
+        const lido_sc_adr_ml  = (0.7 * w).toFixed(2) + ' ml';
+        const lido_sc_adr_mg  = (7.0 * w).toFixed(1) + ' mg';
+        const lido_sc_ohne_ml = (0.5 * w).toFixed(2) + ' ml';
+        const lido_sc_ohne_mg = (5.0 * w).toFixed(1) + ' mg';
+        const lido_bolus_mg   = (1.5 * w).toFixed(1) + ' mg';
+        const lido_bolus_ml   = (0.15 * w).toFixed(2) + ' ml';
+        const lido_perf_mg    = (1.5 * w).toFixed(1) + ' mg/h';
+        const lido_perf_ml    = (0.15 * w).toFixed(2) + ' ml/h';
+
+        // Ropivacain 0.2%
+        const ropi_ml_lo = (1.5 * w).toFixed(2) + ' ml';
+        const ropi_ml_hi = (2.0 * w).toFixed(2) + ' ml';
+        const ropi_mg_lo = (3.0 * w).toFixed(1) + ' mg';
+        const ropi_mg_hi = (4.0 * w).toFixed(1) + ' mg';
+
+        function medTable(title, subtitle, rows, note) {
+            return `
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>${title}</span>
+                </div>
+                <div class="complication-content visible">
+                    ${subtitle ? `<div class="complication-section-title" style="margin-bottom:10px;">${subtitle}</div>` : ''}
+                    <div class="table-wrap" style="margin-bottom:${note ? '10px' : '0'};">
+                        <table class="med-table">
+                            <thead><tr><th>Indikation</th><th>Volumen</th><th>Dosis</th></tr></thead>
+                            <tbody>${rows}</tbody>
+                        </table>
+                    </div>
+                    ${note ? `<div class="complication-note">${note}</div>` : ''}
+                </div>
+            </div>`;
+        }
+
+        function tr(label, ml_dose, mg_dose, sub) {
+            return `<tr>
+                <td class="fluid-label">${label}${sub ? `<span class="med-notes">${sub}</span>` : ''}</td>
+                <td><span class="dosis-cell">${ml_dose}</span></td>
+                <td><span class="dosis-cell" style="background:var(--green-dim);color:var(--green);">${mg_dose}</span></td>
+            </tr>`;
+        }
+
+        container.innerHTML = `
+            <div class="complication-note" style="margin-bottom:14px;">
+                ⚠ Bei Verdacht auf LA-Intoxikation →
+                <button onclick="
+                    document.querySelectorAll('.tab-button').forEach(b=>b.classList.remove('active'));
+                    document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+                    document.querySelector('[data-tab=complications]').classList.add('active');
+                    document.getElementById('complicationsTab').classList.add('active');
+                    setTimeout(()=>{
+                        const hdrs = document.querySelectorAll('.complication-header');
+                        hdrs.forEach(h=>{if(h.textContent.includes('LA-Intox')){h.classList.add('open');h.nextElementSibling.classList.add('visible');}});
+                    },100);
+                " style="background:var(--red-dim);color:var(--red);border:1px solid rgba(248,113,113,0.4);padding:3px 12px;border-radius:7px;font-size:0.78rem;font-weight:600;cursor:pointer;font-family:var(--body);">
+                    → LA-Intoxikation öffnen
+                </button>
+            </div>
+
+            ${medTable(
+                'Articain 4% · 40 mg/ml · submucös',
+                null,
+                tr(ageYears < 12 ? '&lt; 12 Jahre' : '≥ 12 Jahre', articain_ml, articain_mg, articain_note),
+                '< 1 Jahr: nicht empfohlen'
+            )}
+
+            ${medTable(
+                'Bupivacain 0.5% · 5 mg/ml · epidural / WRI',
+                null,
+                tr('epidural / WRI', bupi05_ml, bupi05_mg, '0.5 ml/kg · 2.5 mg/kg')
+            )}
+
+            ${medTable(
+                'Bupivacain 0.25% · 2.5 mg/ml · epidural / WRI',
+                null,
+                tr('epidural / WRI', bupi025_ml, bupi025_mg, '1.0 ml/kg · 2.5 mg/kg')
+            )}
+
+            ${medTable(
+                'Bupivacain 0.125% · 1.25 mg/ml · epidural / WRI',
+                null,
+                tr('epidural / WRI', bupi0125_ml, bupi0125_mg, '2.0 ml/kg · 2.5 mg/kg')
+            )}
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>Bupivacain Perfusor epidural</span>
+                </div>
+                <div class="complication-content visible">
+                    <div class="table-wrap" style="margin-bottom:10px;">
+                        <table class="med-table">
+                            <thead><tr><th>Zugang</th><th>Rate</th><th>mg/h</th></tr></thead>
+                            <tbody>
+                                <tr>
+                                    <td class="fluid-label">Lumbal<span class="med-notes">1 ml/Lebensjahr/h, max 10 ml/h</span></td>
+                                    <td><span class="dosis-cell">${perf_lumbal_ml}</span></td>
+                                    <td><span class="dosis-cell" style="background:var(--green-dim);color:var(--green);">${perf_mg_lo} – ${perf_mg_hi}</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fluid-label">Thorakal<span class="med-notes">0.5 ml/Lebensjahr/h, max 8 ml/h</span></td>
+                                    <td><span class="dosis-cell">${perf_thorak_ml}</span></td>
+                                    <td><span class="dosis-cell" style="background:var(--green-dim);color:var(--green);">${perf_mg_lo} – ${perf_mg_hi}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="complication-note">
+                        Maximaldosis bei postop. Dauerinfusion gut eingehalten – intraoperativ mit Boli an oberer Grenze!<br>
+                        <strong>WRI bei Laparoskopien unter Lidocain-Perfusor:</strong>
+                        Bupivacain 0,25%: <strong>${wri_bupi025}</strong> (0.25 ml/kg) ·
+                        Bupivacain 0,5%: <strong>${wri_bupi05}</strong> (0.125 ml/kg)
+                    </div>
+                </div>
+            </div>
+
+            <div class="complication-item" style="margin-bottom:10px;">
+                <div class="complication-header open" onclick="this.classList.toggle('open'); this.nextElementSibling.classList.toggle('visible');">
+                    <span class="arrow">▶</span>
+                    <span>Lidocain 1% · 10 mg/ml</span>
+                </div>
+                <div class="complication-content visible">
+                    <div class="table-wrap" style="margin-bottom:10px;">
+                        <table class="med-table">
+                            <thead><tr><th>Indikation</th><th>Volumen</th><th>Dosis</th></tr></thead>
+                            <tbody>
+                                ${tr('s.c. / WRI <strong>mit</strong> Adrenalin', lido_sc_adr_ml, lido_sc_adr_mg, '0.7 ml/kg · 7 mg/kg')}
+                                ${tr('s.c. / WRI <strong>ohne</strong> Adrenalin', lido_sc_ohne_ml, lido_sc_ohne_mg, '0.5 ml/kg · 5 mg/kg')}
+                                <tr>
+                                    <td class="fluid-label">i.v. Initialbolus Laparoskopie<span class="med-notes">1.5 mg/kg</span></td>
+                                    <td><span class="dosis-cell">${lido_bolus_ml} ml</span></td>
+                                    <td><span class="dosis-cell" style="background:var(--green-dim);color:var(--green);">${lido_bolus_mg} mg</span></td>
+                                </tr>
+                                <tr>
+                                    <td class="fluid-label">Perfusor i.v. intra-/postop.<span class="med-notes">nach Initialbolus · 1.5 mg/kg/h</span></td>
+                                    <td><span class="dosis-cell">${lido_perf_ml} ml/h</span></td>
+                                    <td><span class="dosis-cell" style="background:var(--green-dim);color:var(--green);">${lido_perf_mg}</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            ${medTable(
+                'Ropivacain 0.2% · 2 mg/ml · perineural',
+                null,
+                tr('perineural', ropi_ml_lo + ' – ' + ropi_ml_hi, ropi_mg_lo + ' – ' + ropi_mg_hi, '1.5–2 ml/kg · 3–4 mg/kg')
+            )}
+        `;
     }
 
     // Event-Listener
@@ -1990,6 +2414,5 @@
     update();
 })();
 </script>
-
 </body>
 </html>
